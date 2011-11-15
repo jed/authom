@@ -5,7 +5,7 @@ Authome is an authentication library for node.js. It unifies authentication APIs
 
 Authome was designed to solve one problem and solve it well. It has an intuitive node.js-like API, no external dependencies, and doesn't force any particular persistence, session, middleware approaches on you.
 
-Authome currently supports Github and Google.
+Authome currently supports Github, Google, and Facebook.
 
 Authome is pronounced [ˈôTHəm], like "awesome" while holding your tongue.
 
@@ -40,27 +40,30 @@ authome.on("error", function(req, res, data) {
 
 authome.listen(server)
 server.listen(8000)
-
-// hit http://localhost/auth?service=github to authenticate
 ```
 
 Installation and Setup
 ----------------------
 
-To install:
+To install, enter:
 
     $ npm install authome
 
-To see the demo:
+To see the demo, enter:
 
-    $ npm start authome
+    $ sudo npm start authome
+
+And then head to http://authome.jedschmidt.com (which resolves to your local machine at `127.0.0.1`). `sudo` is needed to bind to port 80, as many providers do not allow callback URLs a port or `localhost` as the host.
+
+Supported services
+------------------
+
+- Github
+- Google
+- Facebook
 
 FAQ
 ---
-
-### What authentication services are supported?
-
-Right now, just Github and Google. I would love your help in adding more.
 
 ### How can I add my own service?
 
@@ -198,16 +201,36 @@ Start off by [creating an application on Google](https://code.google.com/apis/co
 - `service`: "google"
 - `id`: the application's `Client ID`
 - `secret`: the application's `Client secret`
+- `scope` (optional): the scopes requested by your application
 
 ```javascript
 var google = authome.createServer({
   service: "google",
   id: "515913292583.apps.googleusercontent.com",
-  secret: "UAjUGd_MD9Bkho-kazmJ5Icm"
+  secret: "UAjUGd_MD9Bkho-kazmJ5Icm",
+  scope: ""
 })
 ```
 
 Make sure that the callback URL used by your application is identical to that specified for your application. With the default settings, you'll need a redirect URI of `http://<your-host>/auth?service=google`.
+
+### Facebook
+
+Start off by [creating an application on Facebook](https://developers.facebook.com/apps). Then, to enable Facebook OAuth2 authentication on your site, call `authome.createServer` with the Facebook-specific options:
+
+- `service`: "facebook"
+- `id`: the application's `App ID`
+- `secret`: the application's `App secret`
+- `scope` (optional): the scopes requested by your application
+
+```javascript
+var facebook = authome.createServer({
+  service: "facebook",
+  id: "256546891060909",
+  secret: "e002572fb07423fa66fc38c25c9f49ad",
+  scope: []
+})
+```
 
 Extending Authome
 -----------------
