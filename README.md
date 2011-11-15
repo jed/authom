@@ -23,12 +23,9 @@ server.on("request", function() {
   // your usual server logic
 })
 
-authome.createServer({
-  service: "github",
-  id: "<your-github-application-id>",
-  secret: "<your-github-application-secret>",
-  scope: [ /* optional list of scopes */ ]
-})
+authome.createServer({ /* facebook credentials */ })
+authome.createServer({ /* github credentials */ })
+authome.createServer({ /* google credentials */ }) 
 
 authome.on("auth", function(req, res, data) {
   // called when a user is authenticated on any service
