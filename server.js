@@ -8,6 +8,7 @@ var http = require("http")
           "<div><a href='/auth?service=github'>Who am I on Github?</a></div>" +
           "<div><a href='/auth?service=google'>Who am I on Google?</a></div>" +
           "<div><a href='/auth?service=facebook'>Who am I on Facebook?</a></div>" +
+          "<div><a href='/auth?service=foursquare'>Who am I on Foursquare?</a></div>" +                    
         "</body>" +
       "</html>"
     )
@@ -40,11 +41,19 @@ authome.createServer({
   secret: "e002572fb07423fa66fc38c25c9f49ad"
 })
 
+authome.createServer({
+  service: "foursquare",
+  id: "MHBPMCCUK1OTBI2251JH2WHQJYB5TI1KPZXOAJ0TZZ1NDRI0",
+  secret: "34LXSW1SMSHIEGZW1T0TX4QH0ORQF4K1RL13XJJBSEXRSR5X"
+})
+
+
 authome.on("auth", function(req, res, data) {
   var name = ({
     github: data.user.name,
     google: data.user.name,
-    facebook: data.user.name
+    facebook: data.user.name,
+    foursquare: data.user.firstName + " " + data.user.lastName 
   })[data.service]
 
   var answer = Buffer(
@@ -74,5 +83,7 @@ authome.on("error", function(req, res, data){
   res.end(data)
 })
 
+var port = process.env.PORT || 80;
+console.log("listening on port " + port)
 authome.listen(server)
-server.listen(80)
+server.listen(port)
