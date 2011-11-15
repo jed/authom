@@ -191,6 +191,24 @@ var github = authome.createServer({
 
 Make sure that the callback URL used by your application has the same hostname and port as that specified for your application. If they are different, you will get `redirect_uri_mismatch` errors.
 
+### Google
+
+Start off by [creating an application on Google](https://code.google.com/apis/console/). Then, to enable Google OAuth2 authentication on your site, call `authome.createServer` with the Google-specific options:
+
+- `service`: "google"
+- `id`: the application's `Client ID`
+- `secret`: the application's `Client secret`
+
+```javascript
+var google = authome.createServer({
+  service: "google",
+  id: "515913292583.apps.googleusercontent.com",
+  secret: "UAjUGd_MD9Bkho-kazmJ5Icm"
+})
+```
+
+Make sure that the callback URL used by your application is identical to that specified for your application. With the default settings, you'll need a redirect URI of `http://<your-host>/auth?service=google`.
+
 Extending Authome
 -----------------
 
