@@ -1,0 +1,15 @@
+{
+  "author": "Jed Schmidt <tr@nslator.jp> (http://jed.is)",
+  "name": "authome",
+  "description": "A dependency-free mutli-service authentication tool for node.js",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jed/authome.git"
+  },
+  "engines": {
+    "node": "~0.6.1"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
