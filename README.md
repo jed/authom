@@ -5,6 +5,8 @@ Authome is an authentication library for node.js. It unifies authentication APIs
 
 Authome was designed to solve one problem and solve it well. It has an intuitive node.js-like API, no external dependencies, and doesn't force any particular persistence, session, middleware approaches on you.
 
+Authome currently supports Github and Google.
+
 Authome is pronounced [ˈôTHəm], like "awesome" while holding your tongue.
 
 Example
@@ -42,17 +44,23 @@ server.listen(8000)
 // hit http://localhost/auth?service=github to authenticate
 ```
 
-Installation
-------------
+Installation and Setup
+----------------------
+
+To install:
 
     $ npm install authome
+
+To see the demo:
+
+    $ npm start authome
 
 FAQ
 ---
 
 ### What authentication services are supported?
 
-Right now, just Github. I would love your help in adding more.
+Right now, just Github and Google. I would love your help in adding more.
 
 ### How can I add my own service?
 
