@@ -3,9 +3,9 @@ Authome
 
 Authome is an authentication library for node.js. It unifies authentication APIs for multiple services into a single EventEmitter.
 
-Authome was designed to solve one problem and solve it well. It has an intuitive node.js-like API, no external dependencies, and doesn't force any particular persistence, session, middleware approaches on you.
+Authome was designed to solve one problem and solve it well. It has an intuitive node.js-like API, no external dependencies, and doesn't force any particular persistence, session, or middleware approaches on you.
 
-Authome is pronounced [ˈôTHəm], like "awesome" while holding your tongue.
+Authome is pronounced [ˈôTHəm], like "awesome" with a voiceless dental fricative.
 
 Example
 -------
