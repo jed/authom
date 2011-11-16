@@ -10,6 +10,7 @@ var http = require("http")
           "<div><a href='/auth/google'>Who am I on Google?</a></div>" +
           "<div><a href='/auth/facebook'>Who am I on Facebook?</a></div>" +
           "<div><a href='/auth/foursquare'>Who am I on Foursquare?</a></div>" +                    
+          "<div><a href='/auth/instagram'>Who am I on Instagram?</a></div>" +                    
         "</body>" +
       "</html>"
     )
@@ -48,12 +49,20 @@ authome.createServer({
   secret: "WLNCAVFHCMQGVYOZTNOLPXW0XL2KN0DRD1APOA45SRGEZSGK"
 })
 
+authome.createServer({
+  service: "instagram",
+  id: "e55497d0ebc24289aba4e715f1ab7d2a",
+  secret: "a0e7064bfda64e57a46dcdba48378776"
+})
+
 authome.on("auth", function(req, res, data) {
+  console.log(data)
   var name = ({
     github: data.user.name,
     google: data.user.name,
     facebook: data.user.name,
-    foursquare: data.user.firstName + " " + data.user.lastName 
+    foursquare: data.user.firstName + " " + data.user.lastName,
+    instagram: data.user.data.full_name
   })[data.service]
 
   var answer = Buffer(
