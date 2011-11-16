@@ -49,7 +49,7 @@ To install, enter:
 
 To see the demo, enter:
 
-    $ sudo npm start authome
+    $ npm start authome
 
 And then head to http://authome.jedschmidt.com (which resolves to your local machine at `127.0.0.1`). `sudo` is needed to bind to port 80, as many providers do not allow callback URLs with a port or `localhost` as the host.
 
