@@ -92,6 +92,8 @@ var github = authome.createServer({
 })
 ```
 
+An optional `name` member can also be passed to override that used for Authome path matching. So if you had two Github apps, you could set them as `name: github1` and `name: github2`, so that they could be accessed as `/auth/github1` and `/auth/github2`.
+
 You can listen for `auth` and `error` events by:
 
 - listening to a specific service for service-specific events, or
@@ -168,6 +170,10 @@ server.on("request", function(req, res) {
 server.listen(8000)
 ```
 
+### authome.route
+
+A regular expression that is run on the pathname of every request. Authome will only run if this expression is matched. By default, it is `/^\/auth\/([^\/]+)\/?$/`.
+
 Providers
 ---------
 
@@ -209,7 +215,7 @@ var google = authome.createServer({
 })
 ```
 
-Make sure that the callback URL used by your application is identical to that specified for your application. With the default settings, you'll need a redirect URI of `http://<your-host>/auth?service=google`.
+Make sure that the callback URL used by your application is identical to that specified for your application. With the default settings, you'll need a redirect URI of `http://<your-host>/auth/google`.
 
 ### Facebook
 
