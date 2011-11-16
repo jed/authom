@@ -59,8 +59,9 @@ Supported services
 - Github (by [jed](https://github.com/jed))
 - Google (by [jed](https://github.com/jed))
 - Facebook (by [jed](https://github.com/jed))
-- Foursquare (thanks to [nodebiscut](https://github.com/nodebiscut))
+- Foursquare (by [nodebiscut](https://github.com/nodebiscut))
 - Instagram (by [jed](https://github.com/jed))
+- Gowalla (by [jed](https://github.com/jed))
 
 FAQ
 ---
@@ -248,7 +249,7 @@ var facebook = authome.createServer({
 
 Options:
 
-- `service`: "facebook"
+- `service`: "foursquare"
 - `id`: the application's `CLIENT ID`
 - `secret`: the application's `CLIENT SECRET`
 
@@ -266,7 +267,7 @@ var foursquare = authome.createServer({
 
 Options:
 
-- `service`: "facebook"
+- `service`: "instagram"
 - `id`: the application's `CLIENT ID`
 - `secret`: the application's `CLIENT SECRET`
 - `scope` (optional): the scopes requested by your application
@@ -280,15 +281,34 @@ var instagram = authome.createServer({
   secret: "a0e7064bfda64e57a46dcdba48378776"
 })
 ```
+### Gowalla ([create an app](http://gowalla.com/api/keys))
+
+Options:
+
+- `service`: "gowalla"
+- `id`: the application's `API key`
+- `secret`: the application's `Secret key`
+
+Example:
+
+```javascript
+var gowalla = authome.createServer({
+  service: "gowalla",
+  id: "b8514b75c2674916b77c9a913783b9c2",
+  secret: "34f713fdd6b4488982328487f443bd6d"
+})
+```
 
 Extending Authome
 -----------------
 
-To add an authentication service provider, add a javascript file for the service at the path `/lib/services/<service-name>.js`. This file should `module.export` a single function.
+To add an authentication service provider, add a javascript file for the service at the path `/lib/services/<service-name>.js`. This file should `module.export` an EventEmitter that listens for `request` events, and emits `auth` and `error` events to itself.
 
 ```javascript
+var EventEmitter = require("events").EventEmitter
+
 module.exports = function(options) {
-  var server = this // an event emitter specific to this service
+  var server = new EventEmitter
 
   server.on("request", function(req, res) {
     // respond to the request, redirecting the user as needed
@@ -303,6 +323,8 @@ module.exports = function(options) {
       server.emit("error", req, res, obj)
     }
   })
+
+  return server
 }
 ```
 
