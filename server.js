@@ -6,10 +6,10 @@ var http = require("http")
   , questions = Buffer(
       "<html>" +
         "<body style='font: 300% sans-serif'>" +
-          "<div><a href='/auth?service=github'>Who am I on Github?</a></div>" +
-          "<div><a href='/auth?service=google'>Who am I on Google?</a></div>" +
-          "<div><a href='/auth?service=facebook'>Who am I on Facebook?</a></div>" +
-          "<div><a href='/auth?service=foursquare'>Who am I on Foursquare?</a></div>" +                    
+          "<div><a href='/auth/github'>Who am I on Github?</a></div>" +
+          "<div><a href='/auth/google'>Who am I on Google?</a></div>" +
+          "<div><a href='/auth/facebook'>Who am I on Facebook?</a></div>" +
+          "<div><a href='/auth/foursquare'>Who am I on Foursquare?</a></div>" +                    
         "</body>" +
       "</html>"
     )
@@ -49,7 +49,6 @@ authome.createServer({
 })
 
 authome.on("auth", function(req, res, data) {
-  console.log(data)
   var name = ({
     github: data.user.name,
     google: data.user.name,
