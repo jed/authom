@@ -40,19 +40,6 @@ authome.listen(server)
 server.listen(8000)
 ```
 
-Installation and Setup
-----------------------
-
-To install, enter:
-
-    $ npm install authome
-
-To see the demo, enter:
-
-    $ npm start authome
-
-And then head to http://authome.jedschmidt.com (which resolves to your local machine at `127.0.0.1`). `sudo` is needed to bind to port 80, as many providers do not allow callback URLs with a port or `localhost` as the host.
-
 Supported services
 ------------------
 
@@ -69,6 +56,19 @@ Supported services
 <img src="https://github.com/jed/authome/raw/master/lib/assets/gowalla.ico" style="vertical-align:middle"> Gowalla (by [jed](https://github.com/jed))
 
 <img src="https://github.com/jed/authome/raw/master/lib/assets/37signals.ico" style="vertical-align:middle"> 37signals (by [nodebiscut](https://github.com/nodebiscut))
+
+Installation and Setup
+----------------------
+
+To install, enter:
+
+    $ npm install authome
+
+To see the demo, enter:
+
+    $ npm start authome
+
+And then head to http://authome.jedschmidt.com (which resolves to your local machine at `127.0.0.1`). `sudo` is needed to bind to port 80, as many providers do not allow callback URLs with a port or `localhost` as the host.
 
 FAQ
 ---
