@@ -62,6 +62,7 @@ Supported services
 - Foursquare (by [nodebiscut](https://github.com/nodebiscut))
 - Instagram (by [jed](https://github.com/jed))
 - Gowalla (by [jed](https://github.com/jed))
+- 37signals (by [nodebiscut](https://github.com/nodebiscut))
 
 FAQ
 ---
@@ -296,6 +297,24 @@ var gowalla = authome.createServer({
   service: "gowalla",
   id: "b8514b75c2674916b77c9a913783b9c2",
   secret: "34f713fdd6b4488982328487f443bd6d"
+})
+```
+
+### 37signals ([create an app](https://integrate.37signals.com/apps/))
+
+Options:
+
+- `service`: "37signals"
+- `id`: the application's `Client ID`
+- `secret`: the application's `Client secret`
+
+Example:
+
+```javascript
+var signals = authome.createServer({
+  service: "37signals",
+  id: "c2098292571a03070eb12746353997fb8d6f0e00",
+  secret: "4cb7f46fa83f73ec99d37162b946522b9e7a4d5a"
 })
 ```
 

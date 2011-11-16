@@ -12,6 +12,7 @@ var http = require("http")
           "<div><a href='/auth/foursquare'>Who am I on Foursquare?</a></div>" +
           "<div><a href='/auth/instagram'>Who am I on Instagram?</a></div>" +
           "<div><a href='/auth/gowalla'>Who am I on Gowalla?</a></div>" +
+          "<div><a href='/auth/37signals'>Who am I on 37Signals?</a></div>" +          
         "</body>" +
       "</html>"
     )
@@ -62,6 +63,12 @@ authome.createServer({
   secret: "34f713fdd6b4488982328487f443bd6d"
 })
 
+authome.createServer({
+  service: "37signals",
+  id: "c2098292571a03070eb12746353997fb8d6f0e00",
+  secret: "4cb7f46fa83f73ec99d37162b946522b9e7a4d5a"
+})
+
 authome.on("auth", function(req, res, data) {
   var name, answer
 
@@ -72,6 +79,7 @@ authome.on("auth", function(req, res, data) {
     case "foursquare": name = [data.user.response.user.firstName, data.user.response.user.lastName ].join(" "); break
     case "instagram": name = data.user.data.full_name; break
     case "gowalla": name = [data.user.first_name, data.user.last_name].join(" "); break
+    case "37signals": name = [data.user.identity.first_name, data.user.identity.last_name].join(" ")
   }
   
   answer = Buffer(
