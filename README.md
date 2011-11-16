@@ -66,7 +66,7 @@ FAQ
 
 See **Extending Authome** below.
 
-### Why not just use everyauth? How is Authome different?
+### Why not just use [everyauth](https://github.com/bnoguchi/everyauth)/[passport](https://github.com/jaredhanson/passport)? How is Authome different?
 
 Authome aims to solve a smaller problem, more agnostically. It trades convenience for simplicity and flexibility. Here are some key differences:
 
