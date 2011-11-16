@@ -3,6 +3,17 @@
   "name": "authome",
   "description": "A dependency-free mutli-service authentication tool for node.js",
   "version": "0.1.3",
+  "keywords": [
+    "auth",
+    "authorization",
+    "oauth",
+    "http"
+  ],
+  "homepage": "https://github.com/jed/authome",
+  "contributors": [
+    "Mark Lussier <mlussier@gmail.com> (https://github.com/intabulas)"
+  ],
+  "main": "./lib/authome",
   "repository": {
     "type": "git",
     "url": "git://github.com/jed/authome.git"

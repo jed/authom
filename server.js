@@ -1,5 +1,5 @@
 var http = require("http")
-  , authome = require("./index")
+  , authome = require("authome")
   , server = http.createServer()
   , port = process.env.PORT || 80
 
