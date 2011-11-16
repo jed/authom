@@ -56,7 +56,7 @@ And then head to http://authome.jedschmidt.com (which resolves to your local mac
 Supported services
 ------------------
 
-- Github (by [jed](https://github.com/jed))
+![github](https://github.com/jed/authome/raw/master/lib/assets/github.ico) Github (by [jed](https://github.com/jed))
 - Google (by [jed](https://github.com/jed))
 - Facebook (by [jed](https://github.com/jed))
 - Foursquare (by [nodebiscut](https://github.com/nodebiscut))
