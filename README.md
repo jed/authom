@@ -177,14 +177,16 @@ A regular expression that is run on the pathname of every request. Authome will 
 Providers
 ---------
 
-### Github
+### Github ([create an app](https://github.com/account/applications/new))
 
-Start off by [creating an application on Github](https://github.com/account/applications/new). Then, to enable Github OAuth2 authentication on your site, call `authome.createServer` with the Github-specific options:
+Options:
 
 - `service`: "github"
 - `id`: the application's `Client ID`
 - `secret`: the application's `Secret`
 - `scope` (optional): the scopes requested by your application, as explained [here](http://developer.github.com/v3/oauth/#scopes).
+
+Example:
 
 ```javascript
 var github = authome.createServer({
@@ -197,14 +199,16 @@ var github = authome.createServer({
 
 Make sure that the callback URL used by your application has the same hostname and port as that specified for your application. If they are different, you will get `redirect_uri_mismatch` errors.
 
-### Google
+### Google ([create an app](https://code.google.com/apis/console/))
 
-Start off by [creating an application on Google](https://code.google.com/apis/console/). Then, to enable Google OAuth2 authentication on your site, call `authome.createServer` with the Google-specific options:
+Options:
 
 - `service`: "google"
 - `id`: the application's `Client ID`
 - `secret`: the application's `Client secret`
 - `scope` (optional): the scopes requested by your application
+
+Example:
 
 ```javascript
 var google = authome.createServer({
@@ -217,14 +221,16 @@ var google = authome.createServer({
 
 Make sure that the callback URL used by your application is identical to that specified for your application. With the default settings, you'll need a redirect URI of `http://<your-host>/auth/google`.
 
-### Facebook
+### Facebook ([create an app](https://developers.facebook.com/apps))
 
-Start off by [creating an application on Facebook](https://developers.facebook.com/apps). Then, to enable Facebook OAuth2 authentication on your site, call `authome.createServer` with the Facebook-specific options:
+Options:
 
 - `service`: "facebook"
 - `id`: the application's `App ID`
 - `secret`: the application's `App secret`
 - `scope` (optional): the scopes requested by your application
+
+Example:
 
 ```javascript
 var facebook = authome.createServer({
@@ -235,13 +241,15 @@ var facebook = authome.createServer({
 })
 ```
 
-### Foursquare
+### Foursquare ([create an app](https://foursquare.com/oauth/))
 
-Start off by [creating an application on Foursquare](https://foursquare.com/oauth/). Then, to enable Foursquare OAuth2 authentication on your site, call `authome.createServer` with the Foursquare-specific options:
+Options:
 
 - `service`: "facebook"
 - `id`: the application's `CLIENT ID`
 - `secret`: the application's `CLIENT SECRET`
+
+Example:
 
 ```javascript
 var foursquare = authome.createServer({
