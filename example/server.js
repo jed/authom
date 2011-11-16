@@ -13,6 +13,7 @@ var http = require("http")
           "<div><a href='/auth/instagram'>Who am I on Instagram?</a></div>" +
           "<div><a href='/auth/gowalla'>Who am I on Gowalla?</a></div>" +
           "<div><a href='/auth/37signals'>Who am I on 37Signals?</a></div>" +          
+          "<div><a href='/auth/soundcloud'>Who am I on SoundCloud?</a></div>" +          
         "</body>" +
       "</html>"
     )
@@ -68,6 +69,12 @@ authome.createServer({
   secret: "4cb7f46fa83f73ec99d37162b946522b9e7a4d5a"
 })
 
+authome.createServer({
+  service: "soundcloud",
+  id: "9e5e7b0a891b4a2b13aeae9e5b0c89bb",
+  secret: "2f4df63c8ff10f466685c305e87eba6f"
+})
+
 authome.on("auth", function(req, res, data) {
   var name, answer
 
@@ -79,6 +86,7 @@ authome.on("auth", function(req, res, data) {
     case "instagram": name = data.user.data.full_name; break
     case "gowalla": name = [data.user.first_name, data.user.last_name].join(" "); break
     case "37signals": name = [data.user.identity.first_name, data.user.identity.last_name].join(" ")
+    case "soundcloud": name = data.user.full_name; break
   }
   
   answer = Buffer(
@@ -110,5 +118,5 @@ authome.on("error", function(req, res, data){
 
 authome.listen(server)
 server.listen(port, function() {
-  console.log("listening on port %s", port)
+  console.log("listening at http://authome.jedschmidt.com/")
 })
