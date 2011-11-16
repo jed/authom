@@ -56,13 +56,13 @@ And then head to http://authome.jedschmidt.com (which resolves to your local mac
 Supported services
 ------------------
 
-<img src="https://github.com/jed/authome/raw/master/lib/assets/github.ico" align="middle"> Github (by [jed](https://github.com/jed))
-- Google (by [jed](https://github.com/jed))
-- Facebook (by [jed](https://github.com/jed))
-- Foursquare (by [nodebiscut](https://github.com/nodebiscut))
-- Instagram (by [jed](https://github.com/jed))
-- Gowalla (by [jed](https://github.com/jed))
-- 37signals (by [nodebiscut](https://github.com/nodebiscut))
+<img src="https://github.com/jed/authome/raw/master/lib/assets/github.ico" style="vertical-align:middle"> Github (by [jed](https://github.com/jed))
+<img src="https://github.com/jed/authome/raw/master/lib/assets/google.ico" style="vertical-align:middle"> Google (by [jed](https://github.com/jed))
+<img src="https://github.com/jed/authome/raw/master/lib/assets/facebook.ico" style="vertical-align:middle"> Facebook (by [jed](https://github.com/jed))
+<img src="https://github.com/jed/authome/raw/master/lib/assets/foursquare.ico" style="vertical-align:middle"> Foursquare (by [nodebiscut](https://github.com/nodebiscut))
+<img src="https://github.com/jed/authome/raw/master/lib/assets/instagram.ico" style="vertical-align:middle"> Instagram (by [jed](https://github.com/jed))
+<img src="https://github.com/jed/authome/raw/master/lib/assets/gowalla.ico" style="vertical-align:middle"> Gowalla (by [jed](https://github.com/jed))
+<img src="https://github.com/jed/authome/raw/master/lib/assets/37signals.ico" style="vertical-align:middle"> 37signals (by [nodebiscut](https://github.com/nodebiscut))
 
 FAQ
 ---
