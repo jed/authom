@@ -1,6 +1,7 @@
 var http = require("http")
   , authome = require("./index")
   , server = http.createServer()
+  , port = process.env.PORT || 80
 
   , questions = Buffer(
       "<html>" +
@@ -43,10 +44,9 @@ authome.createServer({
 
 authome.createServer({
   service: "foursquare",
-  id: "MHBPMCCUK1OTBI2251JH2WHQJYB5TI1KPZXOAJ0TZZ1NDRI0",
-  secret: "34LXSW1SMSHIEGZW1T0TX4QH0ORQF4K1RL13XJJBSEXRSR5X"
+  id: "0DPGLE430Y2LFUCOSFXB0ACG3GGD5DNHH5335FLT4US1QDAZ",
+  secret: "WLNCAVFHCMQGVYOZTNOLPXW0XL2KN0DRD1APOA45SRGEZSGK"
 })
-
 
 authome.on("auth", function(req, res, data) {
   var name = ({
@@ -83,7 +83,7 @@ authome.on("error", function(req, res, data){
   res.end(data)
 })
 
-var port = process.env.PORT || 80;
-console.log("listening on port " + port)
 authome.listen(server)
-server.listen(port)
+server.listen(port, function() {
+  console.log("listening on port %s", port)
+})

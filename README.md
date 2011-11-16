@@ -5,8 +5,6 @@ Authome is an authentication library for node.js. It unifies authentication APIs
 
 Authome was designed to solve one problem and solve it well. It has an intuitive node.js-like API, no external dependencies, and doesn't force any particular persistence, session, middleware approaches on you.
 
-Authome currently supports Github, Google, and Facebook.
-
 Authome is pronounced [ˈôTHəm], like "awesome" while holding your tongue.
 
 Example
@@ -58,6 +56,7 @@ Supported services
 - Github
 - Google
 - Facebook
+- Foursquare (thanks to [nodebiscut](https://github.com/nodebiscut))
 
 FAQ
 ---
@@ -226,6 +225,22 @@ var facebook = authome.createServer({
   id: "256546891060909",
   secret: "e002572fb07423fa66fc38c25c9f49ad",
   scope: []
+})
+```
+
+### Foursquare
+
+Start off by [creating an application on Foursquare](https://foursquare.com/oauth/). Then, to enable Foursquare OAuth2 authentication on your site, call `authome.createServer` with the Foursquare-specific options:
+
+- `service`: "facebook"
+- `id`: the application's `CLIENT ID`
+- `secret`: the application's `CLIENT SECRET`
+
+```javascript
+var foursquare = authome.createServer({
+  service: "foursquare",
+  id: "0DPGLE430Y2LFUCOSFXB0ACG3GGD5DNHH5335FLT4US1QDAZ",
+  secret: "WLNCAVFHCMQGVYOZTNOLPXW0XL2KN0DRD1APOA45SRGEZSGK"
 })
 ```
 
