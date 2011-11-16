@@ -49,6 +49,7 @@ authome.createServer({
 })
 
 authome.on("auth", function(req, res, data) {
+  console.log(data)
   var name = ({
     github: data.user.name,
     google: data.user.name,
@@ -73,7 +74,7 @@ authome.on("auth", function(req, res, data) {
 })
 
 authome.on("error", function(req, res, data){
-  data = Buffer("An error occurred: " + data.message)
+  data = Buffer("An error occurred: " + JSON.stringify(data))
 
   res.writeHead(500, {
     "Content-Type": "text/plain",
