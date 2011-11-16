@@ -23,7 +23,8 @@ server.on("request", function() {
 
 authome.createServer({ /* facebook credentials */ })
 authome.createServer({ /* github credentials */ })
-authome.createServer({ /* google credentials */ }) 
+authome.createServer({ /* google credentials */ })
+authome.createServer({ /* foursquare credentials */ })
 
 authome.on("auth", function(req, res, data) {
   // called when a user is authenticated on any service
