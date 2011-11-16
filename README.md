@@ -321,7 +321,7 @@ var signals = authome.createServer({
 Extending Authome
 -----------------
 
-To add an authentication service provider, add a javascript file for the service at the path `/lib/services/<service-name>.js`. This file should `module.export` an EventEmitter that listens for `request` events, and emits `auth` and `error` events to itself.
+To add an authentication service provider, add a javascript file for the service at the path `/lib/services/<service-name>.js`. This file should `module.exports` a constructor that returns an EventEmitter that listens for `request` events, and emits `auth` and `error` events to itself.
 
 ```javascript
 var EventEmitter = require("events").EventEmitter
