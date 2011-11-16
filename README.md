@@ -54,10 +54,11 @@ And then head to http://authome.jedschmidt.com (which resolves to your local mac
 Supported services
 ------------------
 
-- Github
-- Google
-- Facebook
+- Github (by [jed](https://github.com/jed))
+- Google (by [jed](https://github.com/jed))
+- Facebook (by [jed](https://github.com/jed))
 - Foursquare (thanks to [nodebiscut](https://github.com/nodebiscut))
+- Instagram (by [jed](https://github.com/jed))
 
 FAQ
 ---
@@ -256,6 +257,25 @@ var foursquare = authome.createServer({
   service: "foursquare",
   id: "0DPGLE430Y2LFUCOSFXB0ACG3GGD5DNHH5335FLT4US1QDAZ",
   secret: "WLNCAVFHCMQGVYOZTNOLPXW0XL2KN0DRD1APOA45SRGEZSGK"
+})
+```
+
+### Instagram ([create an app](http://instagram.com/developer/client/register/))
+
+Options:
+
+- `service`: "facebook"
+- `id`: the application's `CLIENT ID`
+- `secret`: the application's `CLIENT SECRET`
+- `scope` (optional): the scopes requested by your application
+
+Example:
+
+```javascript
+var instagram = authome.createServer({
+  service: "instagram",
+  id: "e55497d0ebc24289aba4e715f1ab7d2a",
+  secret: "a0e7064bfda64e57a46dcdba48378776"
 })
 ```
 
