@@ -21,10 +21,12 @@ server.on("request", function() {
   // your usual server logic
 })
 
+// create servers for the services you'll be using
 authome.createServer({ /* facebook credentials */ })
 authome.createServer({ /* github credentials */ })
 authome.createServer({ /* google credentials */ })
 authome.createServer({ /* foursquare credentials */ })
+// ... et cetera
 
 authome.on("auth", function(req, res, data) {
   // called when a user is authenticated on any service

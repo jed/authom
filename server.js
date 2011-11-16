@@ -9,8 +9,9 @@ var http = require("http")
           "<div><a href='/auth/github'>Who am I on Github?</a></div>" +
           "<div><a href='/auth/google'>Who am I on Google?</a></div>" +
           "<div><a href='/auth/facebook'>Who am I on Facebook?</a></div>" +
-          "<div><a href='/auth/foursquare'>Who am I on Foursquare?</a></div>" +                    
-          "<div><a href='/auth/instagram'>Who am I on Instagram?</a></div>" +                    
+          "<div><a href='/auth/foursquare'>Who am I on Foursquare?</a></div>" +
+          "<div><a href='/auth/instagram'>Who am I on Instagram?</a></div>" +
+          "<div><a href='/auth/gowalla'>Who am I on Gowalla?</a></div>" +
         "</body>" +
       "</html>"
     )
@@ -55,17 +56,25 @@ authome.createServer({
   secret: "a0e7064bfda64e57a46dcdba48378776"
 })
 
-authome.on("auth", function(req, res, data) {
-  console.log(data)
-  var name = ({
-    github: data.user.name,
-    google: data.user.name,
-    facebook: data.user.name,
-    foursquare: data.user.firstName + " " + data.user.lastName,
-    instagram: data.user.data.full_name
-  })[data.service]
+authome.createServer({
+  service: "gowalla",
+  id: "b8514b75c2674916b77c9a913783b9c2",
+  secret: "34f713fdd6b4488982328487f443bd6d"
+})
 
-  var answer = Buffer(
+authome.on("auth", function(req, res, data) {
+  var name, answer
+
+  switch (data.service) {
+    case "github": name = data.user.name; break
+    case "google": name = data.user.name; break
+    case "facebook": name = data.user.name; break
+    case "foursquare": name = [data.user.response.user.firstName, data.user.response.user.lastName ].join(" "); break
+    case "instagram": name = data.user.data.full_name; break
+    case "gowalla": name = [data.user.first_name, data.user.last_name].join(" "); break
+  }
+  
+  answer = Buffer(
     "<html>" +
       "<body style='font: 300% sans-serif'>" +
         "<div>You are " + name + ".</div>" +
