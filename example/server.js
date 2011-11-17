@@ -1,5 +1,5 @@
 var http = require("http")
-  , authom = require("authom")
+  , authom = require("../lib/authom")
   , server = http.createServer()
   , port = process.env.PORT || 80
 
@@ -15,6 +15,7 @@ var http = require("http")
           "<div><a href='/auth/37signals'>Who am I on 37Signals?</a></div>" +          
           "<div><a href='/auth/soundcloud'>Who am I on SoundCloud?</a></div>" +          
           "<div><a href='/auth/windowslive'>Who am I on Windows Live?</a></div>" +          
+          "<div><a href='/auth/dwolla'>Who am I on Dwolla?</a></div>" +                    
         "</body>" +
       "</html>"
     )
@@ -83,6 +84,13 @@ authom.createServer({
   scope: "wl.basic"
 })
 
+authom.createServer({
+  service: "dwolla",
+  id: "0vNUP/9/GSBXEv69nqKZVfhSZbw8XQdnDiatyXSTM7vW1WzAAU",
+  secret: "KI2tdLiRZ813aclUxTgUVyDbxysoJQzPBjHTJ111nHMNdAVlcs",
+  scope:"AccountInfoFull"
+})
+
 authom.on("auth", function(req, res, data) {
   var name, answer
 
@@ -96,6 +104,7 @@ authom.on("auth", function(req, res, data) {
     case "37signals": name = [data.user.identity.first_name, data.user.identity.last_name].join(" ")
     case "soundcloud": name = data.user.full_name; break
     case "windowslive": name = [data.user.first_name, data.user.last_name].join(" "); break
+    case "dwolla": name = data.user.Name; break    
   }
   
   answer = Buffer(
