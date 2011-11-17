@@ -14,6 +14,7 @@ var http = require("http")
           "<div><a href='/auth/gowalla'>Who am I on Gowalla?</a></div>" +
           "<div><a href='/auth/37signals'>Who am I on 37Signals?</a></div>" +          
           "<div><a href='/auth/soundcloud'>Who am I on SoundCloud?</a></div>" +          
+          "<div><a href='/auth/windowslive'>Who am I on Windows Live?</a></div>" +          
         "</body>" +
       "</html>"
     )
@@ -75,8 +76,17 @@ authome.createServer({
   secret: "2f4df63c8ff10f466685c305e87eba6f"
 })
 
+authome.createServer({
+  service: "windowslive",
+  id: "000000004C06BA3A",
+  secret: "2RsIhweMq6PxR8jc5CjTVoCqTvKZmctY",
+  scope: "wl.basic"
+})
+
 authome.on("auth", function(req, res, data) {
   var name, answer
+
+  console.log(data)
 
   switch (data.service) {
     case "github": name = data.user.name; break
@@ -87,6 +97,7 @@ authome.on("auth", function(req, res, data) {
     case "gowalla": name = [data.user.first_name, data.user.last_name].join(" "); break
     case "37signals": name = [data.user.identity.first_name, data.user.identity.last_name].join(" ")
     case "soundcloud": name = data.user.full_name; break
+    case "windowslive": name = [data.user.first_name, data.user.last_name].join(" "); break
   }
   
   answer = Buffer(

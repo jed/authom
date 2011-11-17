@@ -59,6 +59,8 @@ Supported services
 
 <img src="https://github.com/jed/authome/raw/master/lib/assets/soundcloud.ico" style="vertical-align:middle"> SoundCloud (by [jed](https://github.com/jed))
 
+<img src="https://github.com/jed/authome/raw/master/lib/assets/windowslive.ico" style="vertical-align:middle"> Windows Live (by [jed](https://github.com/jed))
+
 Installation and Setup
 ----------------------
 
@@ -323,6 +325,44 @@ var signals = authome.createServer({
   service: "37signals",
   id: "c2098292571a03070eb12746353997fb8d6f0e00",
   secret: "4cb7f46fa83f73ec99d37162b946522b9e7a4d5a"
+})
+```
+
+### Soundcloud ([create an app](http://soundcloud.com/you/apps/new))
+
+Options:
+
+- `service`: "soundcloud"
+- `id`: the application's `Client ID`
+- `secret`: the application's `Client Secret`
+
+Example:
+
+```javascript
+var soundcloud = authome.createServer({
+  service: "soundcloud",
+  id: "9e5e7b0a891b4a2b13aeae9e5b0c89bb",
+  secret: "2f4df63c8ff10f466685c305e87eba6f"
+})
+```
+
+### Windows Live ([create an app](https://manage.dev.live.com/Applications/Index))
+
+Options:
+
+- `service`: "windowslive"
+- `id`: the application's `Client ID`
+- `secret`: the application's `Client secret`
+- `scope`: the scope requested.
+
+Example:
+
+```javascript
+var windowslive = authome.createServer({
+  service: "windowslive",
+  id: "000000004C06BA3A",
+  secret: "2RsIhweMq6PxR8jc5CjTVoCqTvKZmctY",
+  scope: "wl.basic"
 })
 ```
 
