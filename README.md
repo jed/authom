@@ -1,7 +1,7 @@
 Authome
 =======
 
-Authome is an authentication library for node.js. It unifies authentication APIs for multiple services (currently <img src="https://github.com/jed/authome/raw/master/lib/assets/37signals.ico" style="vertical-align:middle">, <img src="https://github.com/jed/authome/raw/master/lib/assets/facebook.ico" style="vertical-align:middle">, <img src="https://github.com/jed/authome/raw/master/lib/assets/foursquare.ico" style="vertical-align:middle">, <img src="https://github.com/jed/authome/raw/master/lib/assets/github.ico" style="vertical-align:middle">, <img src="https://github.com/jed/authome/raw/master/lib/assets/google.ico" style="vertical-align:middle">, <img src="https://github.com/jed/authome/raw/master/lib/assets/gowalla.ico" style="vertical-align:middle">, <img src="https://github.com/jed/authome/raw/master/lib/assets/instagram.ico" style="vertical-align:middle">, <img src="https://github.com/jed/authome/raw/master/lib/assets/soundcloud.ico" style="vertical-align:middle">, and <img src="https://github.com/jed/authome/raw/master/lib/assets/windowslive.ico" style="vertical-align:middle">) into a single EventEmitter.
+Authome is an authentication library for node.js. It unifies authentication APIs for multiple services into a single EventEmitter.
 
 Authome was designed to solve one problem and solve it well. It has an intuitive node.js-like API, no external dependencies, and doesn't force any particular persistence, session, or middleware approaches on you.
 
