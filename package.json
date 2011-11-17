@@ -1,6 +1,6 @@
 {
   "author": "Jed Schmidt <tr@nslator.jp> (http://jed.is)",
-  "name": "authome",
+  "name": "authom",
   "description": "A dependency-free mutli-service authentication tool for node.js",
   "version": "0.1.6",
   "keywords": [
@@ -9,14 +9,14 @@
     "oauth",
     "http"
   ],
-  "homepage": "https://github.com/jed/authome",
+  "homepage": "https://github.com/jed/authom",
   "contributors": [
     "Mark Lussier <mlussier@gmail.com> (https://github.com/intabulas)"
   ],
-  "main": "./lib/authome",
+  "main": "./lib/authom",
   "repository": {
     "type": "git",
-    "url": "git://github.com/jed/authome.git"
+    "url": "git://github.com/jed/authom.git"
   },
   "engines": {
     "node": "~0.4.12"
