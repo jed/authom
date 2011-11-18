@@ -369,7 +369,7 @@ var instagram = authom.createServer({
 })
 ```
 
-### Soundcloud ([create an app](http://soundcloud.com/you/apps/new))
+### SoundCloud ([create an app](http://soundcloud.com/you/apps/new))
 
 Options:
 
