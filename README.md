@@ -59,6 +59,8 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/windowslive.ico" style="vertical-align:middle"> Windows Live (by [jed](https://github.com/jed))
 
+<img src="https://github.com/jed/authom/raw/master/lib/assets/foodspoting.ico" style="vertical-align:middle"> Foodspotting (by [kimtaro](https://github.com/kimtaro))
+
 Installation and Setup
 ----------------------
 
@@ -361,6 +363,24 @@ var windowslive = authom.createServer({
   id: "000000004C06BA3A",
   secret: "2RsIhweMq6PxR8jc5CjTVoCqTvKZmctY",
   scope: "wl.basic"
+})
+```
+
+### Foodspotting ([request api key](http://www.foodspotting.com/api))
+
+Options:
+
+- `service`: "foodspotting"
+- `id`: the application's `Client ID`
+- `secret`: the application's `Client secret`
+
+Example:
+
+```javascript
+var foodspotting = authom.createServer({
+  service: "foodspotting",
+  id: "<api key>",
+  secret: "<api secret>"
 })
 ```
 
