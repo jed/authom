@@ -59,6 +59,8 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/windowslive.ico" style="vertical-align:middle"> Windows Live (by [jed](https://github.com/jed))
 
+<img src="https://github.com/jed/authom/raw/master/lib/assets/dwolla.ico" style="vertical-align:middle"> Dwolla (by [nodebiscut](https://github.com/nodebiscut))
+
 Installation and Setup
 ----------------------
 
@@ -361,6 +363,26 @@ var windowslive = authom.createServer({
   id: "000000004C06BA3A",
   secret: "2RsIhweMq6PxR8jc5CjTVoCqTvKZmctY",
   scope: "wl.basic"
+})
+```
+
+### Dwolla Live ([create an app](https://www.dwolla.com/applications))
+
+Options:
+
+- `service`: "dwolla"
+- `id`: the application's `Client ID`
+- `secret`: the application's `Client secret`
+- `scope`: the scope requested.
+
+Example:
+
+```javascript
+var windowslive = authom.createServer({
+  service: "dwolla",
+  id: "0vNUP/9/GSBXEv69nqKZVfhSZbw8XQdnDiatyXSTM7vW1WzAAU",
+  secret: "KI2tdLiRZ813aclUxTgUVyDbxysoJQzPBjHTJ111nHMNdAVlcs",
+  scope:"AccountInfoFull"
 })
 ```
 
