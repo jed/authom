@@ -43,7 +43,11 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/37signals.ico" style="vertical-align:middle"> 37signals (by [nodebiscut](https://github.com/nodebiscut))
 
+<img src="https://github.com/jed/authom/raw/master/lib/assets/dwolla.ico" style="vertical-align:middle"> Dwolla (by [nodebiscut](https://github.com/nodebiscut))
+
 <img src="https://github.com/jed/authom/raw/master/lib/assets/facebook.ico" style="vertical-align:middle"> Facebook (by [jed](https://github.com/jed))
+
+<img src="https://github.com/jed/authom/raw/master/lib/assets/foodspotting.ico" style="vertical-align:middle"> Foodspotting (by [kimtaro](https://github.com/kimtaro))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/foursquare.ico" style="vertical-align:middle"> Foursquare (by [nodebiscut](https://github.com/nodebiscut))
 
@@ -58,10 +62,6 @@ Supported services
 <img src="https://github.com/jed/authom/raw/master/lib/assets/soundcloud.ico" style="vertical-align:middle"> SoundCloud (by [jed](https://github.com/jed))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/windowslive.ico" style="vertical-align:middle"> Windows Live (by [jed](https://github.com/jed))
-
-<img src="https://github.com/jed/authom/raw/master/lib/assets/dwolla.ico" style="vertical-align:middle"> Dwolla (by [nodebiscut](https://github.com/nodebiscut))
-
-<img src="https://github.com/jed/authom/raw/master/lib/assets/foodspoting.ico" style="vertical-align:middle"> Foodspotting (by [kimtaro](https://github.com/kimtaro))
 
 Installation and Setup
 ----------------------
@@ -194,6 +194,100 @@ A regular expression that is run on the pathname of every request. authom will o
 Providers
 ---------
 
+### 37signals ([create an app](https://integrate.37signals.com/apps/))
+
+Options:
+
+- `service`: "37signals"
+- `id`: the application's `Client ID`
+- `secret`: the application's `Client secret`
+
+Example:
+
+```javascript
+var signals = authom.createServer({
+  service: "37signals",
+  id: "c2098292571a03070eb12746353997fb8d6f0e00",
+  secret: "4cb7f46fa83f73ec99d37162b946522b9e7a4d5a"
+})
+```
+
+### Dwolla Live ([create an app](https://www.dwolla.com/applications))
+
+Options:
+
+- `service`: "dwolla"
+- `id`: the application's `Client ID`
+- `secret`: the application's `Client secret`
+- `scope`: the scope requested.
+
+Example:
+
+```javascript
+var windowslive = authom.createServer({
+  service: "dwolla",
+  id: "0vNUP/9/GSBXEv69nqKZVfhSZbw8XQdnDiatyXSTM7vW1WzAAU",
+  secret: "KI2tdLiRZ813aclUxTgUVyDbxysoJQzPBjHTJ111nHMNdAVlcs",
+  scope:"AccountInfoFull"
+})
+```
+
+### Facebook ([create an app](https://developers.facebook.com/apps))
+
+Options:
+
+- `service`: "facebook"
+- `id`: the application's `App ID`
+- `secret`: the application's `App secret`
+- `scope` (optional): the scopes requested by your application
+
+Example:
+
+```javascript
+var facebook = authom.createServer({
+  service: "facebook",
+  id: "256546891060909",
+  secret: "e002572fb07423fa66fc38c25c9f49ad",
+  scope: []
+})
+```
+
+### Foodspotting ([request api key](http://www.foodspotting.com/api))
+
+Options:
+
+- `service`: "foodspotting"
+- `id`: the application's `Client ID`
+- `secret`: the application's `Client secret`
+
+Example:
+
+```javascript
+var foodspotting = authom.createServer({
+  service: "foodspotting",
+  id: "<api key>",
+  secret: "<api secret>"
+})
+```
+
+### Foursquare ([create an app](https://foursquare.com/oauth/))
+
+Options:
+
+- `service`: "foursquare"
+- `id`: the application's `CLIENT ID`
+- `secret`: the application's `CLIENT SECRET`
+
+Example:
+
+```javascript
+var foursquare = authom.createServer({
+  service: "foursquare",
+  id: "0DPGLE430Y2LFUCOSFXB0ACG3GGD5DNHH5335FLT4US1QDAZ",
+  secret: "WLNCAVFHCMQGVYOZTNOLPXW0XL2KN0DRD1APOA45SRGEZSGK"
+})
+```
+
 ### Github ([create an app](https://github.com/account/applications/new))
 
 Options:
@@ -236,64 +330,6 @@ var google = authom.createServer({
 })
 ```
 
-Make sure that the callback URL used by your application is identical to that specified for your application. With the default settings, you'll need a redirect URI of `http://<your-host>/auth/google`.
-
-### Facebook ([create an app](https://developers.facebook.com/apps))
-
-Options:
-
-- `service`: "facebook"
-- `id`: the application's `App ID`
-- `secret`: the application's `App secret`
-- `scope` (optional): the scopes requested by your application
-
-Example:
-
-```javascript
-var facebook = authom.createServer({
-  service: "facebook",
-  id: "256546891060909",
-  secret: "e002572fb07423fa66fc38c25c9f49ad",
-  scope: []
-})
-```
-
-### Foursquare ([create an app](https://foursquare.com/oauth/))
-
-Options:
-
-- `service`: "foursquare"
-- `id`: the application's `CLIENT ID`
-- `secret`: the application's `CLIENT SECRET`
-
-Example:
-
-```javascript
-var foursquare = authom.createServer({
-  service: "foursquare",
-  id: "0DPGLE430Y2LFUCOSFXB0ACG3GGD5DNHH5335FLT4US1QDAZ",
-  secret: "WLNCAVFHCMQGVYOZTNOLPXW0XL2KN0DRD1APOA45SRGEZSGK"
-})
-```
-
-### Instagram ([create an app](http://instagram.com/developer/client/register/))
-
-Options:
-
-- `service`: "instagram"
-- `id`: the application's `CLIENT ID`
-- `secret`: the application's `CLIENT SECRET`
-- `scope` (optional): the scopes requested by your application
-
-Example:
-
-```javascript
-var instagram = authom.createServer({
-  service: "instagram",
-  id: "e55497d0ebc24289aba4e715f1ab7d2a",
-  secret: "a0e7064bfda64e57a46dcdba48378776"
-})
-```
 ### Gowalla ([create an app](http://gowalla.com/api/keys))
 
 Options:
@@ -312,21 +348,24 @@ var gowalla = authom.createServer({
 })
 ```
 
-### 37signals ([create an app](https://integrate.37signals.com/apps/))
+Make sure that the callback URL used by your application is identical to that specified for your application. With the default settings, you'll need a redirect URI of `http://<your-host>/auth/google`.
+
+### Instagram ([create an app](http://instagram.com/developer/client/register/))
 
 Options:
 
-- `service`: "37signals"
-- `id`: the application's `Client ID`
-- `secret`: the application's `Client secret`
+- `service`: "instagram"
+- `id`: the application's `CLIENT ID`
+- `secret`: the application's `CLIENT SECRET`
+- `scope` (optional): the scopes requested by your application
 
 Example:
 
 ```javascript
-var signals = authom.createServer({
-  service: "37signals",
-  id: "c2098292571a03070eb12746353997fb8d6f0e00",
-  secret: "4cb7f46fa83f73ec99d37162b946522b9e7a4d5a"
+var instagram = authom.createServer({
+  service: "instagram",
+  id: "e55497d0ebc24289aba4e715f1ab7d2a",
+  secret: "a0e7064bfda64e57a46dcdba48378776"
 })
 ```
 
@@ -365,44 +404,6 @@ var windowslive = authom.createServer({
   id: "000000004C06BA3A",
   secret: "2RsIhweMq6PxR8jc5CjTVoCqTvKZmctY",
   scope: "wl.basic"
-})
-```
-
-### Dwolla Live ([create an app](https://www.dwolla.com/applications))
-
-Options:
-
-- `service`: "dwolla"
-- `id`: the application's `Client ID`
-- `secret`: the application's `Client secret`
-- `scope`: the scope requested.
-
-Example:
-
-```javascript
-var windowslive = authom.createServer({
-  service: "dwolla",
-  id: "0vNUP/9/GSBXEv69nqKZVfhSZbw8XQdnDiatyXSTM7vW1WzAAU",
-  secret: "KI2tdLiRZ813aclUxTgUVyDbxysoJQzPBjHTJ111nHMNdAVlcs",
-  scope:"AccountInfoFull"
-})
-```
-
-### Foodspotting ([request api key](http://www.foodspotting.com/api))
-
-Options:
-
-- `service`: "foodspotting"
-- `id`: the application's `Client ID`
-- `secret`: the application's `Client secret`
-
-Example:
-
-```javascript
-var foodspotting = authom.createServer({
-  service: "foodspotting",
-  id: "<api key>",
-  secret: "<api secret>"
 })
 ```
 
