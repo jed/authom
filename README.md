@@ -61,6 +61,8 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/dwolla.ico" style="vertical-align:middle"> Dwolla (by [nodebiscut](https://github.com/nodebiscut))
 
+<img src="https://github.com/jed/authom/raw/master/lib/assets/foodspoting.ico" style="vertical-align:middle"> Foodspotting (by [kimtaro](https://github.com/kimtaro))
+
 Installation and Setup
 ----------------------
 
@@ -383,6 +385,24 @@ var windowslive = authom.createServer({
   id: "0vNUP/9/GSBXEv69nqKZVfhSZbw8XQdnDiatyXSTM7vW1WzAAU",
   secret: "KI2tdLiRZ813aclUxTgUVyDbxysoJQzPBjHTJ111nHMNdAVlcs",
   scope:"AccountInfoFull"
+})
+```
+
+### Foodspotting ([request api key](http://www.foodspotting.com/api))
+
+Options:
+
+- `service`: "foodspotting"
+- `id`: the application's `Client ID`
+- `secret`: the application's `Client secret`
+
+Example:
+
+```javascript
+var foodspotting = authom.createServer({
+  service: "foodspotting",
+  id: "<api key>",
+  secret: "<api secret>"
 })
 ```
 
