@@ -6,16 +6,16 @@ var http = require("http")
   , questions = Buffer(
       "<html>" +
         "<body style='font: 300% sans-serif'>" +
+          "<div><a href='/auth/37signals'>Who am I on 37Signals?</a></div>" +
+          "<div><a href='/auth/dwolla'>Who am I on Dwolla?</a></div>" +
           "<div><a href='/auth/github'>Who am I on Github?</a></div>" +
           "<div><a href='/auth/google'>Who am I on Google?</a></div>" +
           "<div><a href='/auth/facebook'>Who am I on Facebook?</a></div>" +
           "<div><a href='/auth/foursquare'>Who am I on Foursquare?</a></div>" +
-          "<div><a href='/auth/instagram'>Who am I on Instagram?</a></div>" +
           "<div><a href='/auth/gowalla'>Who am I on Gowalla?</a></div>" +
-          "<div><a href='/auth/37signals'>Who am I on 37Signals?</a></div>" +          
-          "<div><a href='/auth/soundcloud'>Who am I on SoundCloud?</a></div>" +          
-          "<div><a href='/auth/windowslive'>Who am I on Windows Live?</a></div>" +          
-          "<div><a href='/auth/dwolla'>Who am I on Dwolla?</a></div>" +                    
+          "<div><a href='/auth/instagram'>Who am I on Instagram?</a></div>" +
+          "<div><a href='/auth/soundcloud'>Who am I on SoundCloud?</a></div>" +
+          "<div><a href='/auth/windowslive'>Who am I on Windows Live?</a></div>" +
         "</body>" +
       "</html>"
     )
@@ -95,18 +95,18 @@ authom.on("auth", function(req, res, data) {
   var name, answer
 
   switch (data.service) {
-    case "github": name = data.user.name; break
-    case "google": name = data.user.name; break
+    case "37signals": name = [data.user.identity.first_name, data.user.identity.last_name].join(" ")
+    case "dwolla": name = data.user.Name; break
     case "facebook": name = data.user.name; break
     case "foursquare": name = [data.user.response.user.firstName, data.user.response.user.lastName ].join(" "); break
-    case "instagram": name = data.user.data.full_name; break
+    case "github": name = data.user.name; break
+    case "google": name = data.user.name; break
     case "gowalla": name = [data.user.first_name, data.user.last_name].join(" "); break
-    case "37signals": name = [data.user.identity.first_name, data.user.identity.last_name].join(" ")
+    case "instagram": name = data.user.data.full_name; break
     case "soundcloud": name = data.user.full_name; break
     case "windowslive": name = [data.user.first_name, data.user.last_name].join(" "); break
-    case "dwolla": name = data.user.Name; break    
   }
-  
+
   answer = Buffer(
     "<html>" +
       "<body style='font: 300% sans-serif'>" +
