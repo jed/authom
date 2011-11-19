@@ -19,7 +19,7 @@
     "url": "git://github.com/jed/authom.git"
   },
   "engines": {
-    "node": "~0.4.12"
+    "node": ">=0.4.12"
   },
   "dependencies": {},
   "devDependencies": {},
