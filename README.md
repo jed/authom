@@ -9,6 +9,7 @@ Example
 -------
 
 For the built-in node.js HTTP module:
+
 ```javascript
 // Like socket.io, authom will intercept requests
 // for you to help keep your routes clean.
@@ -40,6 +41,7 @@ server.listen(8000)
 ```
 
 For Express/Connect:
+
 ```javascript
 var app = require("express").createServer()
   , authom = require("authom")
