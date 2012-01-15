@@ -1,13 +1,14 @@
 authom
 =======
 
-authom is an authentication library for node.js. It unifies authentication APIs for multiple services into a single EventEmitter.
+authom is an authentication library for node.js. It unifies authentication APIs for multiple services into a single EventEmitter, and works with both the built-in node.js HTTP module and as an Express/Connect app.
 
 authom was designed to solve one problem and solve it well. It has an intuitive node.js-like API, no external dependencies, and doesn't force any particular persistence, session, or middleware approaches on you.
 
 Example
 -------
 
+For the built-in node.js HTTP module:
 ```javascript
 // Like socket.io, authom will intercept requests
 // for you to help keep your routes clean.
@@ -36,6 +37,31 @@ authom.on("error", function(req, res, data) {
 
 authom.listen(server)
 server.listen(8000)
+```
+
+For Express/Connect:
+```javascript
+var app = require("express").createServer()
+  , authom = require("authom")
+
+// create servers for the services you'll be using
+authom.createServer({ /* facebook credentials */ })
+authom.createServer({ /* github credentials */ })
+authom.createServer({ /* google credentials */ })
+authom.createServer({ /* foursquare credentials */ })
+// ... et cetera
+
+authom.on("auth", function(req, res, data) {
+  // called when a user is authenticated on any service
+})
+
+authom.on("error", function(req, res, data) {
+  // called when an error occurs during authentication
+})
+
+app.get("/auth/:service", authom.app)
+
+app.listen(8000)
 ```
 
 Supported services
@@ -87,7 +113,7 @@ See **Extending authom** below.
 
 authom aims to solve a smaller problem, more agnostically. It trades convenience for simplicity and flexibility. Here are some key differences:
 
-- authom was built for node, while everyauth was built for Express and Connect. everyauth aims for a much more ambitious integration, but at the expense of locking you into a particular stack. authom takes a more UNIX approach; since it doesn't handle logins, persistence, sessions, or anything past authentication, it is more of a tool and less of a framework.
+- authom was built for node, and can also work with Express, while everyauth is tied to Express and Connect. everyauth aims for a much more ambitious integration, but at the expense of locking you into a particular stack. authom takes a more UNIX approach; since it doesn't handle logins, persistence, sessions, or anything past authentication, it is more of a tool and less of a framework.
 
 - authom uses native node.js conventions such as EventEmitters and objects, while everyauth uses promises and a chaining config API. This is of course subjective, but the authom API aims to be closer to the APIs of node.js itself.
 
@@ -190,6 +216,10 @@ server.listen(8000)
 ### authom.route
 
 A regular expression that is run on the pathname of every request. authom will only run if this expression is matched. By default, it is `/^\/auth\/([^\/]+)\/?$/`.
+
+### authom.app
+
+This is a convenience Express app, which should be mounted at a path containing a `:service` parameter.
 
 Providers
 ---------
@@ -443,7 +473,7 @@ Once you're done, and have written tests, make sure you open a pull request so t
 License
 -------
 
-Copyright (c) 2011 Jed Schmidt, http://jed.is/
+Copyright (c) 2012 Jed Schmidt, http://jed.is/
  
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
