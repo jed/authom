@@ -87,25 +87,11 @@ app.get("/", function(req, res) {
 })
 
 authom.on("auth", function(req, res, data) {
-  var name
-
-  switch (data.service) {
-    case "37signals": name = [data.user.identity.first_name, data.user.identity.last_name].join(" ")
-    case "dwolla": name = data.user.Name; break
-    case "facebook": name = data.user.name; break
-    case "foursquare": name = [data.user.response.user.firstName, data.user.response.user.lastName ].join(" "); break
-    case "github": name = data.user.name; break
-    case "google": name = data.user.name; break
-    case "gowalla": name = [data.user.first_name, data.user.last_name].join(" "); break
-    case "instagram": name = data.user.data.full_name; break
-    case "soundcloud": name = data.user.full_name; break
-    case "windowslive": name = [data.user.first_name, data.user.last_name].join(" "); break
-  }
-
   res.send(
     "<html>" +
-      "<body style='font: 300% sans-serif'>" +
-        "<div>You are " + name + ".</div>" +
+      "<body>" +
+        "<div style='font: 300% sans-serif'>You are " + data.id + " on " + data.service + ".</div>" +
+        "<pre><code>" + JSON.stringify(data, null, 2) + "</code></pre>" +
       "</body>" +
     "</html>"
   )
