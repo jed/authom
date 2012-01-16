@@ -160,7 +160,12 @@ authom.on("error", function(req, res, data){})
 
 ### authom.on("auth", function(req, res, data){})
 
-Listens for successful authentications across all services. The listener is called with the original request/response objects as well as a service-specific user object, allowing you to provide your own session scheme. The name of the service is given in the `service` key so that you can branch your own code:
+Listens for successful authentications across all services. The listener is called with the original request/response objects as well as a service-specific user object, which contains the following keys:
+
+- `token`: the token resulting from authentication
+- `id`: the ID of the user on the remote service
+- `data`: the original data returned from the service, and
+- `service`: the name of the service, given so that you can branch your code:
 
 ```javascript
 authom.on("auth", function(req, res, data) {
