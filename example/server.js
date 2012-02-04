@@ -14,6 +14,7 @@ var http = require("http")
           "<div><a href='/auth/foursquare'>Who am I on Foursquare?</a></div>" +
           "<div><a href='/auth/gowalla'>Who am I on Gowalla?</a></div>" +
           "<div><a href='/auth/instagram'>Who am I on Instagram?</a></div>" +
+          "<div><a href='/auth/meetup'>Who am I on Meetup?</a></div>" +
           "<div><a href='/auth/soundcloud'>Who am I on SoundCloud?</a></div>" +
           "<div><a href='/auth/windowslive'>Who am I on Windows Live?</a></div>" +
         "</body>" +
@@ -57,6 +58,12 @@ authom.createServer({
   service: "instagram",
   id: "e55497d0ebc24289aba4e715f1ab7d2a",
   secret: "a0e7064bfda64e57a46dcdba48378776"
+})
+
+authom.createServer({
+  service: "meetup",
+  id: "t2glfik2ff9e56ajs560fouf0f",
+  secret: "q103560uihj1sp1dv08ae3ch5v"
 })
 
 authom.createServer({
