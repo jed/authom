@@ -65,6 +65,12 @@ authom.createServer({
   scope:"AccountInfoFull"
 })
 
+authom.createServer({
+  service: "twitter",
+  id: "LwjCfHAugMghuYtHLS9Ugw",
+  secret: "etam3XHqDSDPceyHti6tRQGoywiISY0vZWfzhQUxGL4"
+})
+
 app.get("/auth/:service", authom.app)
 
 app.get("/", function(req, res) {
@@ -80,6 +86,7 @@ app.get("/", function(req, res) {
         "<div><a href='/auth/gowalla'>Who am I on Gowalla?</a></div>" +
         "<div><a href='/auth/instagram'>Who am I on Instagram?</a></div>" +
         "<div><a href='/auth/soundcloud'>Who am I on SoundCloud?</a></div>" +
+        "<div><a href='/auth/twitter'>Who am I on Twitter?</a></div>" +
         "<div><a href='/auth/windowslive'>Who am I on Windows Live?</a></div>" +
       "</body>" +
     "</html>"

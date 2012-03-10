@@ -3,7 +3,7 @@ authom
 
 authom is an authentication library for node.js. It unifies authentication APIs for multiple services into a single EventEmitter, and works with both the built-in node.js HTTP module and as an Express/Connect app.
 
-authom was designed to solve one problem and solve it well. It has an intuitive node.js-like API, no external dependencies, and doesn't force any particular persistence, session, or middleware approaches on you.
+authom was designed to solve one problem and solve it well. It has an intuitive node.js-like API, no required dependencies, and doesn't force any particular persistence, session, or middleware approaches on you.
 
 Example
 -------
@@ -50,7 +50,7 @@ var app = require("express").createServer()
 authom.createServer({ /* facebook credentials */ })
 authom.createServer({ /* github credentials */ })
 authom.createServer({ /* google credentials */ })
-authom.createServer({ /* foursquare credentials */ })
+authom.createServer({ /* twitter credentials */ })
 // ... et cetera
 
 authom.on("auth", function(req, res, data) {
@@ -90,6 +90,8 @@ Supported services
 <img src="https://github.com/jed/authom/raw/master/lib/assets/meetup.ico" style="vertical-align:middle"> Meetup (by [softprops](https://github.com/softprops))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/soundcloud.ico" style="vertical-align:middle"> SoundCloud (by [jed](https://github.com/jed))
+
+<img src="https://github.com/jed/authom/raw/master/lib/assets/twitter.ico" style="vertical-align:middle"> Twitter (by [jed](https://github.com/jed))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/windowslive.ico" style="vertical-align:middle"> Windows Live (by [jed](https://github.com/jed))
 
@@ -426,6 +428,26 @@ var soundcloud = authom.createServer({
 })
 ```
 
+### Twitter ([create an app](dev.twitter.com/apps/))
+
+Options:
+
+- `service`: "twitter"
+- `id`: the application's `Consumer key`
+- `secret`: the application's `Consumer secret`
+
+Example:
+
+```javascript
+authom.createServer({
+  service: "twitter",
+  id: "LwjCfHAugMghuYtHLS9Ugw",
+  secret: "etam3XHqDSDPceyHti6tRQGoywiISY0vZWfzhQUxGL4"
+})
+```
+
+Notes: Since Twitter is still (!) using the old OAuth1.0a protocol, it requires [@ciaranj](https://github.com/ciaranj)'s [node-oauth](https://github.com/ciaranj/node-oauth) library to be installed.
+
 ### Windows Live ([create an app](https://manage.dev.live.com/Applications/Index))
 
 Options:
@@ -483,7 +505,7 @@ License
 -------
 
 Copyright (c) 2012 Jed Schmidt, http://jed.is/
- 
+
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
 "Software"), to deal in the Software without restriction, including
@@ -491,10 +513,10 @@ without limitation the rights to use, copy, modify, merge, publish,
 distribute, sublicense, and/or sell copies of the Software, and to
 permit persons to whom the Software is furnished to do so, subject to
 the following conditions:
- 
+
 The above copyright notice and this permission notice shall be
 included in all copies or substantial portions of the Software.
- 
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
