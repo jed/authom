@@ -25,7 +25,7 @@ server.on("request", function() {
 authom.createServer({ /* facebook credentials */ })
 authom.createServer({ /* github credentials */ })
 authom.createServer({ /* google credentials */ })
-authom.createServer({ /* foursquare credentials */ })
+authom.createServer({ /* twitter credentials */ })
 // ... et cetera
 
 authom.on("auth", function(req, res, data) {
