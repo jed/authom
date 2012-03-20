@@ -2,7 +2,7 @@
   "author": "Jed Schmidt <tr@nslator.jp> (http://jed.is)",
   "name": "authom",
   "description": "A dependency-free multi-service authentication tool for node.js",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "keywords": [
     "auth",
     "authorization",
@@ -21,7 +21,9 @@
   "engines": {
     "node": ">=0.4.12"
   },
-  "dependencies": {},
+  "dependencies": {
+    "oauth": ">=0.9.6"
+  },
   "devDependencies": {
     "express": "~2.5.4"
   },
