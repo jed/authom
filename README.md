@@ -95,6 +95,9 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/windowslive.ico" style="vertical-align:middle"> Windows Live (by [jed](https://github.com/jed))
 
+<img src="https://github.com/jed/authom/raw/master/lib/assets/linkedin.ico" style="vertical-align:middle"> LinkedIn (by [shinecita](https://github.com/shinecita))
+
+
 Installation and Setup
 ----------------------
 
@@ -467,6 +470,27 @@ var windowslive = authom.createServer({
   scope: "wl.basic"
 })
 ```
+
+
+### LinkedIn ([create an app](https://www.linkedin.com/secure/developer?newapp=))
+
+Options:
+
+- `service`: "linkedin"
+- `id`: the application's `Api key`
+- `secret`: the application's `Secret key`
+- `scopes`: Optional. An array with the scopes, fe: ["r_fullprofile", "r_emailaddress"]. Default: r_fullprofile
+
+Example:
+
+```javascript
+authom.createServer({
+  service: "linkedin",
+  id: "AsjCfHAugMghuYtHLS9Xzy",
+  secret: "arom3XHqDSDPceyHti6tRQGoywiISY0vZWfzhQUxXZ5"
+})
+```
+
 
 Extending authom
 -----------------

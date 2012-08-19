@@ -71,6 +71,13 @@ authom.createServer({
   secret: "etam3XHqDSDPceyHti6tRQGoywiISY0vZWfzhQUxGL4"
 })
 
+authom.createServer({
+  service: "linkedin",
+  id: "bc8kg8qo87z6",
+  secret: "0azYQoOJ9vF8i7mC",
+  scopes:["r_fullprofile"]
+})
+
 app.get("/auth/:service", authom.app)
 
 app.get("/", function(req, res) {
@@ -88,6 +95,7 @@ app.get("/", function(req, res) {
         "<div><a href='/auth/soundcloud'>Who am I on SoundCloud?</a></div>" +
         "<div><a href='/auth/twitter'>Who am I on Twitter?</a></div>" +
         "<div><a href='/auth/windowslive'>Who am I on Windows Live?</a></div>" +
+         "<div><a href='/auth/linkedin'>Who am using LinkedIn?</a></div>" +
       "</body>" +
     "</html>"
   )
