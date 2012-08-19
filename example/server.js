@@ -18,6 +18,7 @@ var http = require("http")
           "<div><a href='/auth/soundcloud'>Who am I on SoundCloud?</a></div>" +
           "<div><a href='/auth/twitter'>Who am I on Twitter?</a></div>" +
           "<div><a href='/auth/windowslive'>Who am I on Windows Live?</a></div>" +
+           "<div><a href='/auth/windowslive'>Who am I on LinkedIn?</a></div>" +
         "</body>" +
       "</html>"
     )
@@ -103,6 +104,12 @@ authom.createServer({
   service: "twitter",
   id: "LwjCfHAugMghuYtHLS9Ugw",
   secret: "etam3XHqDSDPceyHti6tRQGoywiISY0vZWfzhQUxGL4"
+})
+
+authom.createServer({
+  service: "linkedin",
+  id: "bc8kg8qo87z6",
+  secret: "0azYQoOJ9vF8i7mC"
 })
 
 authom.on("auth", function(req, res, data) {
