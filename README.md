@@ -156,7 +156,7 @@ github.on("auth", function(req, res, gitHubSpecificData){})
 github.on("error", function(req, res, gitHubSpecificData){})
 ```
 
-Or, use this to listen to events from all provders, since authom already listens and namespaces them for you:
+Or, use this to listen to events from all providers, since authom already listens and namespaces them for you:
 
 ```javascript
 authom.on("auth", function(req, res, data){})
@@ -227,11 +227,51 @@ server.listen(8000)
 
 ### authom.route
 
-A regular expression that is run on the pathname of every request. authom will only run if this expression is matched. By default, it is `/^\/auth\/([^\/]+)\/?$/`.
+A regular expression that is run on the pathname of every request. authom will only run if this expression is matched. By default, it is `/^\/auth\/([^\/][\w]+)\/?([\w]+)?.*?$/;`. It matches the second and third part of the path which are required to be matched for authom to function properly:
+
+* [0] The default match, the whole string if there's a match
+* [1] The second part of the path. This should contain the service used (e.g. 'facebook')
+* [2] The third part of the path. This should optionally contain the `verifyAuth` path (see [verifyAuth feature](#client-side-authentication-using-jssdk))
 
 ### authom.app
 
 This is a convenience Express app, which should be mounted at a path containing a `:service` parameter.
+
+## Client side authentication using JS/SDK
+
+Some providers (like Facebook) offer javascript SDKs that allow for a complete client side authentication. In those cases, the client performs all the authentication steps without the server ever getting touched.
+
+For such cases the `verifyAuth` mechanism is provided. After the client-side authentication completes, and the *Access Token* is available, we can perform a POST request to the server with the *Access Token* in order to:
+
+  1. Inform the server that we are authenticated with a provider
+  2. Have the server validate with the provider the authentication
+  3. Get back a proper response from the server with our auth logic (our local user data object)
+
+To enable the `verifyAuth` feature and configure it, the following API properties are available:
+
+### authom.verifyAuth
+
+A boolean parameter, which by default is set to `false`. Set it to `true` to enable the `verifyAuth` feature.
+
+### authom.verifyAuthPath
+
+A string indicating the path where the POST request should point to. By default it is set to `verifyAuth`. So if the provider is Facebook the full path would be:
+
+```
+/auth/facebook/verifyAuth
+```
+
+### authom.verifyAuthAccessTokenParam
+
+A string declaring the name of the *Access Token* parameter as passed from the POST request. By default it is named `accessToken`.
+
+### Additional setup for verifyAuth
+
+If you want to enable `verifyAuth` and you are using express, you need to add one additional line to your `app.js` file:
+
+```javascript
+app.post("/auth/:service/" + authom.verifyAuthPath, authom.app);
+```
 
 Providers
 ---------
