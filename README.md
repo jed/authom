@@ -126,8 +126,6 @@ authom aims to solve a smaller problem, more agnostically. It trades convenience
 
 - authom uses native node.js conventions such as EventEmitters and objects, while everyauth uses promises and a chaining config API. This is of course subjective, but the authom API aims to be closer to the APIs of node.js itself.
 
-- authom works with node.js v0.6. (this was not true of everyauth at the time this library was written)
-
 API
 ---
 
