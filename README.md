@@ -295,7 +295,7 @@ var facebook = authom.createServer({
   scope: []
 })
 ```
-### Fitbit ([request api key](http://www.fit.com/api))
+### Fitbit ([request api key](https://dev.fitbit.com/apps/new))
 
 Options:
 
