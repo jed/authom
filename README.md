@@ -313,11 +313,11 @@ var fitbit = authom.createServer({
 })
 ```
 
-### Foodspotting ([request api key](http://dev.fitbit.com/apps/new))
+### Foodspotting ([request api key](http://www.foodspotting.com/api))
 
 Options:
 
-- `service`: "fitbit"
+- `service`: "foodspotting"
 - `id`: the application's `Client ID`
 - `secret`: the application's `Client secret`
 
