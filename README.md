@@ -75,6 +75,8 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/facebook.ico" style="vertical-align:middle"> Facebook (by [jed](https://github.com/jed))
 
+<img src="https://github.com/jed/authom/raw/master/lib/assets/fitbit.ico" style="vertical-align:middle"> Fitbit (by [pspeter3](https://github.com/pspeter3))
+
 <img src="https://github.com/jed/authom/raw/master/lib/assets/foodspotting.ico" style="vertical-align:middle"> Foodspotting (by [kimtaro](https://github.com/kimtaro))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/foursquare.ico" style="vertical-align:middle"> Foursquare (by [nodebiscut](https://github.com/nodebiscut))
@@ -87,6 +89,8 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/instagram.ico" style="vertical-align:middle"> Instagram (by [jed](https://github.com/jed))
 
+<img src="https://github.com/jed/authom/raw/master/lib/assets/linkedin.ico" style="vertical-align:middle"> LinkedIn (by [shinecita](https://github.com/shinecita))
+
 <img src="https://github.com/jed/authom/raw/master/lib/assets/meetup.ico" style="vertical-align:middle"> Meetup (by [softprops](https://github.com/softprops))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/soundcloud.ico" style="vertical-align:middle"> SoundCloud (by [jed](https://github.com/jed))
@@ -94,8 +98,6 @@ Supported services
 <img src="https://github.com/jed/authom/raw/master/lib/assets/twitter.ico" style="vertical-align:middle"> Twitter (by [jed](https://github.com/jed))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/windowslive.ico" style="vertical-align:middle"> Windows Live (by [jed](https://github.com/jed))
-
-<img src="https://github.com/jed/authom/raw/master/lib/assets/linkedin.ico" style="vertical-align:middle"> LinkedIn (by [shinecita](https://github.com/shinecita))
 
 
 Installation and Setup
@@ -293,12 +295,29 @@ var facebook = authom.createServer({
   scope: []
 })
 ```
-
-### Foodspotting ([request api key](http://www.foodspotting.com/api))
+### Fitbit ([request api key](http://www.fit.com/api))
 
 Options:
 
-- `service`: "foodspotting"
+- `service`: "fitbit"
+- `id`: the application's `Client ID`
+- `secret`: the application's `Client secret`
+
+Example:
+
+```javascript
+var fitbit = authom.createServer({
+  service: "fitbit",
+  id: "45987d27b0e14780bb1a6f1769e679dd",
+  secret: "3d403aaeb5b84bc49e98ef8b946a19d5"
+})
+```
+
+### Foodspotting ([request api key](http://dev.fitbit.com/apps/new))
+
+Options:
+
+- `service`: "fitbit"
 - `id`: the application's `Client ID`
 - `secret`: the application's `Client secret`
 
@@ -411,6 +430,25 @@ var instagram = authom.createServer({
 })
 ```
 
+### LinkedIn ([create an app](https://www.linkedin.com/secure/developer?newapp=))
+
+Options:
+
+- `service`: "linkedin"
+- `id`: the application's `Api key`
+- `secret`: the application's `Secret key`
+- `scopes`: Optional. An array with the scopes, fe: ["r_fullprofile", "r_emailaddress"]. Default: r_fullprofile
+
+Example:
+
+```javascript
+authom.createServer({
+  service: "linkedin",
+  id: "AsjCfHAugMghuYtHLS9Xzy",
+  secret: "arom3XHqDSDPceyHti6tRQGoywiISY0vZWfzhQUxXZ5"
+})
+```
+
 ### SoundCloud ([create an app](http://soundcloud.com/you/apps/new))
 
 Options:
@@ -466,26 +504,6 @@ var windowslive = authom.createServer({
   id: "000000004C06BA3A",
   secret: "2RsIhweMq6PxR8jc5CjTVoCqTvKZmctY",
   scope: "wl.basic"
-})
-```
-
-
-### LinkedIn ([create an app](https://www.linkedin.com/secure/developer?newapp=))
-
-Options:
-
-- `service`: "linkedin"
-- `id`: the application's `Api key`
-- `secret`: the application's `Secret key`
-- `scopes`: Optional. An array with the scopes, fe: ["r_fullprofile", "r_emailaddress"]. Default: r_fullprofile
-
-Example:
-
-```javascript
-authom.createServer({
-  service: "linkedin",
-  id: "AsjCfHAugMghuYtHLS9Xzy",
-  secret: "arom3XHqDSDPceyHti6tRQGoywiISY0vZWfzhQUxXZ5"
 })
 ```
 

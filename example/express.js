@@ -78,6 +78,12 @@ authom.createServer({
   scopes:["r_fullprofile"]
 })
 
+authom.createServer({
+  service: "fitbit",
+  id: "45987d27b0e14780bb1a6f1769e679dd",
+  secret: "3d403aaeb5b84bc49e98ef8b946a19d5"
+})
+
 app.get("/auth/:service", authom.app)
 
 app.get("/", function(req, res) {
@@ -89,13 +95,15 @@ app.get("/", function(req, res) {
         "<div><a href='/auth/github'>Who am I on Github?</a></div>" +
         "<div><a href='/auth/google'>Who am I on Google?</a></div>" +
         "<div><a href='/auth/facebook'>Who am I on Facebook?</a></div>" +
+        "<div><a href='/auth/fitbit'>Who am I on Fitbit?</a></div>" +
         "<div><a href='/auth/foursquare'>Who am I on Foursquare?</a></div>" +
         "<div><a href='/auth/gowalla'>Who am I on Gowalla?</a></div>" +
         "<div><a href='/auth/instagram'>Who am I on Instagram?</a></div>" +
+        "<div><a href='/auth/linkedin'>Who am I on LinkedIn?</a></div>" +
+        "<div><a href='/auth/meetup'>Who am I on Meetup?</a></div>" +
         "<div><a href='/auth/soundcloud'>Who am I on SoundCloud?</a></div>" +
         "<div><a href='/auth/twitter'>Who am I on Twitter?</a></div>" +
-        "<div><a href='/auth/windowslive'>Who am I on Windows Live?</a></div>" +
-         "<div><a href='/auth/linkedin'>Who am using LinkedIn?</a></div>" +
+        "<div><a href='/auth/windowslive'>Who am I on Windows Live?</a></div>" +  
       "</body>" +
     "</html>"
   )
