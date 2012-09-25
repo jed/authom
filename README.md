@@ -480,6 +480,8 @@ Options:
 - `id`: the application's `Api key`
 - `secret`: the application's `Secret key`
 - `scopes`: Optional. An array with the scopes, fe: ["r_fullprofile", "r_emailaddress"]. Default: r_fullprofile
+- `fields`: Optional. Comma separated (no spaces) String with the linkedIn [fields](https://developer.linkedin.com/documents/profile-fields#fullprofile) to include in the query, fe: "first-name,last-name,picture-url,industry,summary,specialties,skills,projects,headline,site-standard-profile-request" 
+- `format`: Optional. Format of the response, default "json"
 
 Example:
 
