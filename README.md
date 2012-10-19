@@ -508,6 +508,28 @@ var windowslive = authom.createServer({
 ```
 
 
+### LinkedIn ([create an app](https://www.linkedin.com/secure/developer?newapp=))
+
+Options:
+
+- `service`: "linkedin"
+- `id`: the application's `Api key`
+- `secret`: the application's `Secret key`
+- `scopes`: Optional. An array with the scopes, fe: ["r_fullprofile", "r_emailaddress"]. Default: r_fullprofile
+- `fields`: Optional. Comma separated (no spaces) String with the linkedIn [fields](https://developer.linkedin.com/documents/profile-fields#fullprofile) to include in the query, fe: "first-name,last-name,picture-url,industry,summary,specialties,skills,projects,headline,site-standard-profile-request" 
+- `format`: Optional. Format of the response, default "json".
+
+Example:
+
+```javascript
+authom.createServer({
+  service: "linkedin",
+  id: "AsjCfHAugMghuYtHLS9Xzy",
+  secret: "arom3XHqDSDPceyHti6tRQGoywiISY0vZWfzhQUxXZ5"
+})
+```
+
+
 Extending authom
 -----------------
 
