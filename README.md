@@ -75,6 +75,8 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/facebook.ico" style="vertical-align:middle"> Facebook (by [jed](https://github.com/jed))
 
+<img src="https://github.com/jed/authom/raw/master/lib/assets/fitbit.ico" style="vertical-align:middle"> Fitbit (by [pspeter3](https://github.com/pspeter3))
+
 <img src="https://github.com/jed/authom/raw/master/lib/assets/foodspotting.ico" style="vertical-align:middle"> Foodspotting (by [kimtaro](https://github.com/kimtaro))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/foursquare.ico" style="vertical-align:middle"> Foursquare (by [nodebiscut](https://github.com/nodebiscut))
@@ -87,6 +89,8 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/instagram.ico" style="vertical-align:middle"> Instagram (by [jed](https://github.com/jed))
 
+<img src="https://github.com/jed/authom/raw/master/lib/assets/linkedin.ico" style="vertical-align:middle"> LinkedIn (by [shinecita](https://github.com/shinecita))
+
 <img src="https://github.com/jed/authom/raw/master/lib/assets/meetup.ico" style="vertical-align:middle"> Meetup (by [softprops](https://github.com/softprops))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/soundcloud.ico" style="vertical-align:middle"> SoundCloud (by [jed](https://github.com/jed))
@@ -94,8 +98,6 @@ Supported services
 <img src="https://github.com/jed/authom/raw/master/lib/assets/twitter.ico" style="vertical-align:middle"> Twitter (by [jed](https://github.com/jed))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/windowslive.ico" style="vertical-align:middle"> Windows Live (by [jed](https://github.com/jed))
-
-<img src="https://github.com/jed/authom/raw/master/lib/assets/linkedin.ico" style="vertical-align:middle"> LinkedIn (by [shinecita](https://github.com/shinecita))
 
 
 Installation and Setup
@@ -125,8 +127,6 @@ authom aims to solve a smaller problem, more agnostically. It trades convenience
 - authom was built for node, and can also work with Express, while everyauth is tied to Express and Connect. everyauth aims for a much more ambitious integration, but at the expense of locking you into a particular stack. authom takes a more UNIX approach; since it doesn't handle logins, persistence, sessions, or anything past authentication, it is more of a tool and less of a framework.
 
 - authom uses native node.js conventions such as EventEmitters and objects, while everyauth uses promises and a chaining config API. This is of course subjective, but the authom API aims to be closer to the APIs of node.js itself.
-
-- authom works with node.js v0.6. (this was not true of everyauth at the time this library was written)
 
 API
 ---
@@ -295,6 +295,23 @@ var facebook = authom.createServer({
   scope: []
 })
 ```
+### Fitbit ([request api key](https://dev.fitbit.com/apps/new))
+
+Options:
+
+- `service`: "fitbit"
+- `id`: the application's `Client ID`
+- `secret`: the application's `Client secret`
+
+Example:
+
+```javascript
+var fitbit = authom.createServer({
+  service: "fitbit",
+  id: "45987d27b0e14780bb1a6f1769e679dd",
+  secret: "3d403aaeb5b84bc49e98ef8b946a19d5"
+})
+```
 
 ### Foodspotting ([request api key](http://www.foodspotting.com/api))
 
@@ -413,6 +430,25 @@ var instagram = authom.createServer({
 })
 ```
 
+### LinkedIn ([create an app](https://www.linkedin.com/secure/developer?newapp=))
+
+Options:
+
+- `service`: "linkedin"
+- `id`: the application's `Api key`
+- `secret`: the application's `Secret key`
+- `scopes`: Optional. An array with the scopes, fe: ["r_fullprofile", "r_emailaddress"]. Default: r_fullprofile
+
+Example:
+
+```javascript
+authom.createServer({
+  service: "linkedin",
+  id: "AsjCfHAugMghuYtHLS9Xzy",
+  secret: "arom3XHqDSDPceyHti6tRQGoywiISY0vZWfzhQUxXZ5"
+})
+```
+
 ### SoundCloud ([create an app](http://soundcloud.com/you/apps/new))
 
 Options:
@@ -481,7 +517,7 @@ Options:
 - `secret`: the application's `Secret key`
 - `scopes`: Optional. An array with the scopes, fe: ["r_fullprofile", "r_emailaddress"]. Default: r_fullprofile
 - `fields`: Optional. Comma separated (no spaces) String with the linkedIn [fields](https://developer.linkedin.com/documents/profile-fields#fullprofile) to include in the query, fe: "first-name,last-name,picture-url,industry,summary,specialties,skills,projects,headline,site-standard-profile-request" 
-- `format`: Optional. Format of the response, default "json"
+- `format`: Optional. Format of the response, default "json".
 
 Example:
 
