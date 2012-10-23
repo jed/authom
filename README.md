@@ -71,7 +71,7 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/37signals.ico" style="vertical-align:middle"> 37signals (by [nodebiscut](https://github.com/nodebiscut))
 
-<img src="https://github.com/jed/authom/raw/master/lib/assets/dropbox.ico" style="vertical-align:middle"> Dropbox (by [aslakhellesoy](https://github.com/aslakhellesoy))
+<img src="https://github.com/jed/authom/raw/master/lib/assets/dropbox.ico" style="vertical-align:middle"> Dropbox (by [cartuchogl](https://github.com/cartuchogl))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/dwolla.ico" style="vertical-align:middle"> Dwolla (by [nodebiscut](https://github.com/nodebiscut))
 
@@ -255,6 +255,24 @@ var signals = authom.createServer({
   service: "37signals",
   id: "c2098292571a03070eb12746353997fb8d6f0e00",
   secret: "4cb7f46fa83f73ec99d37162b946522b9e7a4d5a"
+})
+```
+
+### Dropbox ([create an app](https://www.dropbox.com/developers/apps))
+
+Options:
+
+- `service`: "dropbox"
+- `id`: the application's `App key`
+- `secret`: the application's `App secret`
+
+Example:
+
+```javascript
+var signals = authom.createServer({
+  service: "dropbox",
+  id: "zuuteb2w7i82mdg",
+  secret: "rj503lgqodxzvbp"
 })
 ```
 
