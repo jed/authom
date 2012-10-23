@@ -84,6 +84,12 @@ authom.createServer({
   secret: "3d403aaeb5b84bc49e98ef8b946a19d5"
 })
 
+authom.createServer({
+  service: "dropbox",
+  id: "zuuteb2w7i82mdg",
+  secret: "rj503lgqodxzvbp"
+})
+
 app.get("/auth/:service", authom.app)
 
 app.get("/", function(req, res) {
@@ -104,6 +110,7 @@ app.get("/", function(req, res) {
         "<div><a href='/auth/soundcloud'>Who am I on SoundCloud?</a></div>" +
         "<div><a href='/auth/twitter'>Who am I on Twitter?</a></div>" +
         "<div><a href='/auth/windowslive'>Who am I on Windows Live?</a></div>" +  
+        "<div><a href='/auth/dropbox'>Who am I on Dropbox?</a></div>" +  
       "</body>" +
     "</html>"
   )
