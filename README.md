@@ -71,6 +71,8 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/37signals.ico" style="vertical-align:middle"> 37signals (by [nodebiscut](https://github.com/nodebiscut))
 
+<img src="https://github.com/jed/authom/raw/master/lib/assets/dropbox.ico" style="vertical-align:middle"> Dropbox (by [aslakhellesoy](https://github.com/aslakhellesoy))
+
 <img src="https://github.com/jed/authom/raw/master/lib/assets/dwolla.ico" style="vertical-align:middle"> Dwolla (by [nodebiscut](https://github.com/nodebiscut))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/facebook.ico" style="vertical-align:middle"> Facebook (by [jed](https://github.com/jed))
@@ -516,7 +518,7 @@ Options:
 - `id`: the application's `Api key`
 - `secret`: the application's `Secret key`
 - `scopes`: Optional. An array with the scopes, fe: ["r_fullprofile", "r_emailaddress"]. Default: r_fullprofile
-- `fields`: Optional. Comma separated (no spaces) String with the linkedIn [fields](https://developer.linkedin.com/documents/profile-fields#fullprofile) to include in the query, fe: "first-name,last-name,picture-url,industry,summary,specialties,skills,projects,headline,site-standard-profile-request" 
+- `fields`: Optional. Comma separated (no spaces) String with the linkedIn [fields](https://developer.linkedin.com/documents/profile-fields#fullprofile) to include in the query, fe: "first-name,last-name,picture-url,industry,summary,specialties,skills,projects,headline,site-standard-profile-request"
 - `format`: Optional. Format of the response, default "json".
 
 Example:
