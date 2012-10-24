@@ -85,6 +85,8 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/github.ico" style="vertical-align:middle"> Github (by [jed](https://github.com/jed))
 
+<img src="https://github.com/jed/authom/raw/master/lib/assets/bitbucket.ico" style="vertical-align:middle" width="16" height="16"> Bitbucket (by [aslakhellesoy](https://github.com/aslakhellesoy))
+
 <img src="https://github.com/jed/authom/raw/master/lib/assets/google.ico" style="vertical-align:middle"> Google (by [jed](https://github.com/jed))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/gowalla.ico" style="vertical-align:middle"> Gowalla (by [jed](https://github.com/jed))
@@ -269,7 +271,7 @@ Options:
 Example:
 
 ```javascript
-var signals = authom.createServer({
+var dropbox = authom.createServer({
   service: "dropbox",
   id: "zuuteb2w7i82mdg",
   secret: "rj503lgqodxzvbp"
@@ -390,6 +392,24 @@ var github = authom.createServer({
 ```
 
 Make sure that the callback URL used by your application has the same hostname and port as that specified for your application. If they are different, you will get `redirect_uri_mismatch` errors.
+
+### Bitbucket (Go to https://bitbucket.org/account/user/YOURACCOUNT/api to create an app)
+
+Options:
+
+- `service`: "bitbucket"
+- `id`: the application's `Key`
+- `secret`: the application's `Secret`
+
+Example:
+
+```javascript
+var bitbucket = authom.createServer({
+  service: "bitbucket",
+  id: "Fs7WNJSqgUSL8zBAZD",
+  secret: "yNTv52kS7DWSztpLgbLWKD2AaNxGq2mB"
+})
+```
 
 ### Google ([create an app](https://code.google.com/apis/console/))
 

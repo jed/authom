@@ -90,6 +90,12 @@ authom.createServer({
   secret: "rj503lgqodxzvbp"
 })
 
+authom.createServer({
+  service: "bitbucket",
+  id: "Fs7WNJSqgUSL8zBAZD",
+  secret: "yNTv52kS7DWSztpLgbLWKD2AaNxGq2mB"
+})
+
 app.get("/auth/:service", authom.app)
 
 app.get("/", function(req, res) {
@@ -111,6 +117,7 @@ app.get("/", function(req, res) {
         "<div><a href='/auth/twitter'>Who am I on Twitter?</a></div>" +
         "<div><a href='/auth/windowslive'>Who am I on Windows Live?</a></div>" +  
         "<div><a href='/auth/dropbox'>Who am I on Dropbox?</a></div>" +  
+        "<div><a href='/auth/bitbucket'>Who am I on Bitbucket?</a></div>" +
       "</body>" +
     "</html>"
   )
