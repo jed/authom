@@ -124,7 +124,8 @@ authom.createServer({
 authom.createServer({
   service: "dropbox",
   id: "zuuteb2w7i82mdg",
-  secret: "rj503lgqodxzvbp"
+  secret: "rj503lgqodxzvbp",
+  info: false
 })
 
 authom.createServer({
