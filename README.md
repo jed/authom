@@ -265,6 +265,7 @@ Options:
 - `service`: "dropbox"
 - `id`: the application's `App key`
 - `secret`: the application's `App secret`
+- `info`: specify `true` if you want to get the user info (a little slower - one extra request)
 
 Example:
 
@@ -273,6 +274,7 @@ var signals = authom.createServer({
   service: "dropbox",
   id: "zuuteb2w7i82mdg",
   secret: "rj503lgqodxzvbp"
+  info: true
 })
 ```
 
