@@ -85,7 +85,7 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/github.ico" style="vertical-align:middle"> Github (by [jed](https://github.com/jed))
 
-<img src="https://github.com/jed/authom/raw/master/lib/assets/bitbucket.ico" style="vertical-align:middle" width="16" height="16"> Bitbucket (by [aslakhellesoy](https://github.com/aslakhellesoy))
+<img src="https://github.com/jed/authom/raw/master/lib/assets/bitbucket.png" style="vertical-align:middle" width="16" height="16"> Bitbucket (by [aslakhellesoy](https://github.com/aslakhellesoy))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/google.ico" style="vertical-align:middle"> Google (by [jed](https://github.com/jed))
 
@@ -93,7 +93,7 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/instagram.ico" style="vertical-align:middle"> Instagram (by [jed](https://github.com/jed))
 
-<img src="https://github.com/jed/authom/raw/master/lib/assets/linkedin.ico" style="vertical-align:middle"> LinkedIn (by [shinecita](https://github.com/shinecita))
+<img src="https://github.com/aslakhellesoy/authom/raw/master/lib/assets/linkedin.ico" style="vertical-align:middle"> LinkedIn (by [shinecita](https://github.com/shinecita))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/meetup.ico" style="vertical-align:middle"> Meetup (by [softprops](https://github.com/softprops))
 
