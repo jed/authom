@@ -21,6 +21,7 @@ var http = require("http")
           "<div><a href='/auth/twitter'>Who am I on Twitter?</a></div>" +
           "<div><a href='/auth/windowslive'>Who am I on Windows Live?</a></div>" +  
           "<div><a href='/auth/dropbox'>Who am I on Dropbox?</a></div>" +  
+          "<div><a href='/auth/bitbucket'>Who am I on Bitbucket?</a></div>" +
         "</body>" +
       "</html>"
     )
@@ -125,6 +126,12 @@ authom.createServer({
   id: "zuuteb2w7i82mdg",
   secret: "rj503lgqodxzvbp",
   info: false
+})
+
+authom.createServer({
+  service: "bitbucket",
+  id: "Fs7WNJSqgUSL8zBAZD",
+  secret: "yNTv52kS7DWSztpLgbLWKD2AaNxGq2mB"
 })
 
 authom.on("auth", function(req, res, data) {
