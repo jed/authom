@@ -71,6 +71,8 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/37signals.ico" style="vertical-align:middle"> 37signals (by [nodebiscut](https://github.com/nodebiscut))
 
+<img src="https://github.com/jed/authom/raw/master/lib/assets/bitbucket.png" style="vertical-align:middle" width="16" height="16"> Bitbucket (by [aslakhellesoy](https://github.com/aslakhellesoy))
+
 <img src="https://github.com/jed/authom/raw/master/lib/assets/dropbox.ico" style="vertical-align:middle"> Dropbox (by [cartuchogl](https://github.com/cartuchogl))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/dwolla.ico" style="vertical-align:middle"> Dwolla (by [nodebiscut](https://github.com/nodebiscut))
@@ -84,8 +86,6 @@ Supported services
 <img src="https://github.com/jed/authom/raw/master/lib/assets/foursquare.ico" style="vertical-align:middle"> Foursquare (by [nodebiscut](https://github.com/nodebiscut))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/github.ico" style="vertical-align:middle"> Github (by [jed](https://github.com/jed))
-
-<img src="https://github.com/jed/authom/raw/master/lib/assets/bitbucket.png" style="vertical-align:middle" width="16" height="16"> Bitbucket (by [aslakhellesoy](https://github.com/aslakhellesoy))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/google.ico" style="vertical-align:middle"> Google (by [jed](https://github.com/jed))
 
