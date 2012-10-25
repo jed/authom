@@ -85,7 +85,7 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/github.ico" style="vertical-align:middle"> Github (by [jed](https://github.com/jed))
 
-<img src="https://github.com/jed/authom/raw/master/lib/assets/bitbucket.ico" style="vertical-align:middle" width="16" height="16"> Bitbucket (by [aslakhellesoy](https://github.com/aslakhellesoy))
+<img src="https://github.com/jed/authom/raw/master/lib/assets/bitbucket.png" style="vertical-align:middle" width="16" height="16"> Bitbucket (by [aslakhellesoy](https://github.com/aslakhellesoy))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/google.ico" style="vertical-align:middle"> Google (by [jed](https://github.com/jed))
 
