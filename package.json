@@ -29,5 +29,6 @@
   },
   "scripts": {
     "start": "sudo node ./example/server.js"
-  }
+  },
+  "license": "MIT"
 }
