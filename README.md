@@ -326,11 +326,11 @@ Options:
 Example:
 
 ```javascript
-var windowslive = authom.createServer({
+var dwolla = authom.createServer({
   service: "dwolla",
   id: "0vNUP/9/GSBXEv69nqKZVfhSZbw8XQdnDiatyXSTM7vW1WzAAU",
   secret: "KI2tdLiRZ813aclUxTgUVyDbxysoJQzPBjHTJ111nHMNdAVlcs",
-  scope:"AccountInfoFull"
+  scope: "AccountInfoFull"
 })
 ```
 
