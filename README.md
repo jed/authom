@@ -554,7 +554,7 @@ Options:
 Example:
 
 ```javascript
-authom.createServer({
+var twitter = authom.createServer({
   service: "twitter",
   id: "LwjCfHAugMghuYtHLS9Ugw",
   secret: "etam3XHqDSDPceyHti6tRQGoywiISY0vZWfzhQUxGL4"
@@ -598,7 +598,7 @@ Options:
 Example:
 
 ```javascript
-authom.createServer({
+var linkedin = authom.createServer({
   service: "linkedin",
   id: "AsjCfHAugMghuYtHLS9Xzy",
   secret: "arom3XHqDSDPceyHti6tRQGoywiISY0vZWfzhQUxXZ5"
