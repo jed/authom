@@ -353,6 +353,7 @@ var facebook = authom.createServer({
   scope: []
 })
 ```
+
 ### Fitbit ([request api key](https://dev.fitbit.com/apps/new))
 
 Options:
@@ -506,25 +507,6 @@ var instagram = authom.createServer({
 })
 ```
 
-### LinkedIn ([create an app](https://www.linkedin.com/secure/developer?newapp=))
-
-Options:
-
-- `service`: "linkedin"
-- `id`: the application's `Api key`
-- `secret`: the application's `Secret key`
-- `scopes`: Optional. An array with the scopes, fe: ["r_fullprofile", "r_emailaddress"]. Default: r_fullprofile
-
-Example:
-
-```javascript
-authom.createServer({
-  service: "linkedin",
-  id: "AsjCfHAugMghuYtHLS9Xzy",
-  secret: "arom3XHqDSDPceyHti6tRQGoywiISY0vZWfzhQUxXZ5"
-})
-```
-
 ### SoundCloud ([create an app](http://soundcloud.com/you/apps/new))
 
 Options:
@@ -582,7 +564,6 @@ var windowslive = authom.createServer({
   scope: "wl.basic"
 })
 ```
-
 
 ### LinkedIn ([create an app](https://www.linkedin.com/secure/developer?newapp=))
 
