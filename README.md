@@ -174,6 +174,7 @@ authom.on("error", function(req, res, data){})
 Listens for successful authentications across all services. The listener is called with the original request/response objects as well as a service-specific user object, which contains the following keys:
 
 - `token`: the token resulting from authentication
+- `refresh_token`: the refresh_token resulting from authentication, if implemented by auth service, otherwise `undefined`
 - `id`: the ID of the user on the remote service
 - `data`: the original data returned from the service, and
 - `service`: the name of the service, given so that you can branch your code:
