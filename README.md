@@ -343,7 +343,7 @@ Options:
 - `id`: the application's `App ID`
 - `secret`: the application's `App secret`
 - `scope` (optional): the scopes requested by your application
-
+- `fields` (optional): the fields passed onto `/users/me`
 Example:
 
 ```javascript
@@ -351,7 +351,8 @@ var facebook = authom.createServer({
   service: "facebook",
   id: "256546891060909",
   secret: "e002572fb07423fa66fc38c25c9f49ad",
-  scope: []
+  scope: [],
+  fields: ["name", "picture"]
 })
 ```
 
