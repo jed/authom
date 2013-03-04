@@ -50,7 +50,8 @@ authom.createServer({
 authom.createServer({
   service: "facebook",
   id: "256546891060909",
-  secret: "e002572fb07423fa66fc38c25c9f49ad"
+  secret: "e002572fb07423fa66fc38c25c9f49ad",
+  fields: ['name', 'picture']
 })
 
 authom.createServer({
