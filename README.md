@@ -106,6 +106,8 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/assets/ninjablocks.ico" style="vertical-align:middle"> Ninja Blocks (by [thatguydan](https://github.com/thatguydan))
 
+<img src="https://github.com/jed/authom/raw/master/lib/assets/ninjablocks.ico" style="vertical-align:middle"> Ninja Blocks (by [thatguydan](https://github.com/thatguydan))
+
 Installation and Setup
 ----------------------
 
