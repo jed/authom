@@ -97,6 +97,7 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/linkedin.ico" style="vertical-align:middle"> LinkedIn (by [shinecita](https://github.com/shinecita))
 
+<img src="https://github.com/jed/authom/raw/master/lib/assets/ninjablocks.ico" style="vertical-align:middle"> Ninja Blocks (by [thatguydan](https://github.com/thatguydan))
 
 Installation and Setup
 ----------------------
