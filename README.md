@@ -71,9 +71,15 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/37signals.ico" style="vertical-align:middle"> 37signals (by [nodebiscut](https://github.com/nodebiscut))
 
+<img src="https://github.com/jed/authom/raw/master/lib/assets/bitbucket.png" style="vertical-align:middle" width="16" height="16"> Bitbucket (by [aslakhellesoy](https://github.com/aslakhellesoy))
+
+<img src="https://github.com/jed/authom/raw/master/lib/assets/dropbox.ico" style="vertical-align:middle"> Dropbox (by [cartuchogl](https://github.com/cartuchogl))
+
 <img src="https://github.com/jed/authom/raw/master/lib/assets/dwolla.ico" style="vertical-align:middle"> Dwolla (by [nodebiscut](https://github.com/nodebiscut))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/facebook.ico" style="vertical-align:middle"> Facebook (by [jed](https://github.com/jed))
+
+<img src="https://github.com/jed/authom/raw/master/lib/assets/fitbit.ico" style="vertical-align:middle"> Fitbit (by [pspeter3](https://github.com/pspeter3))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/foodspotting.ico" style="vertical-align:middle"> Foodspotting (by [kimtaro](https://github.com/kimtaro))
 
@@ -87,6 +93,8 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/instagram.ico" style="vertical-align:middle"> Instagram (by [jed](https://github.com/jed))
 
+<img src="https://github.com/jed/authom/raw/master/lib/assets/linkedin.ico" style="vertical-align:middle"> LinkedIn (by [shinecita](https://github.com/shinecita))
+
 <img src="https://github.com/jed/authom/raw/master/lib/assets/meetup.ico" style="vertical-align:middle"> Meetup (by [softprops](https://github.com/softprops))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/soundcloud.ico" style="vertical-align:middle"> SoundCloud (by [jed](https://github.com/jed))
@@ -94,8 +102,6 @@ Supported services
 <img src="https://github.com/jed/authom/raw/master/lib/assets/twitter.ico" style="vertical-align:middle"> Twitter (by [jed](https://github.com/jed))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/windowslive.ico" style="vertical-align:middle"> Windows Live (by [jed](https://github.com/jed))
-
-<img src="https://github.com/jed/authom/raw/master/lib/assets/linkedin.ico" style="vertical-align:middle"> LinkedIn (by [shinecita](https://github.com/shinecita))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/ninjablocks.ico" style="vertical-align:middle"> Ninja Blocks (by [thatguydan](https://github.com/thatguydan))
 
@@ -169,6 +175,7 @@ authom.on("error", function(req, res, data){})
 Listens for successful authentications across all services. The listener is called with the original request/response objects as well as a service-specific user object, which contains the following keys:
 
 - `token`: the token resulting from authentication
+- `refresh_token`: the refresh_token resulting from authentication, if implemented by auth service, otherwise `undefined`
 - `id`: the ID of the user on the remote service
 - `data`: the original data returned from the service, and
 - `service`: the name of the service, given so that you can branch your code:
@@ -226,6 +233,39 @@ server.on("request", function(req, res) {
 server.listen(8000)
 ```
 
+### authom.registerService(serviceName, Service)
+
+Authom-compliant services can be registered using this method. This is useful for adding custom authentication services not suited to be part of the ```/lib``` core services. (For example a business-specific in-house authentication service.) _Custom services will override existing services of the same name._
+
+```javascript
+var authom = require("authom")
+  , EventEmitter = require("events").EventEmitter
+
+//Custom authentication service
+var IpAuth = function(options) {
+  var server = new EventEmitter
+  var whiteList = options.whiteList || ["127.0.0.1", "::1"]
+
+  server.on("request", function(req, res) {
+    if (~whiteList.indexOf(req.connection.remoteAddress)) {
+      server.emit("auth", req, res, {status: "yay"})
+    }
+    else {
+      server.emit("error", req, res, {status: "boo"})
+    }
+  })
+
+  return server
+}
+
+authom.registerService("ip-auth", IpAuth)
+
+auth.createServer({
+  service: "ip-auth",
+  whiteList : ["127.0.0.1", "::1", "192.168.0.1"]
+})
+```
+
 ### authom.route
 
 A regular expression that is run on the pathname of every request. authom will only run if this expression is matched. By default, it is `/^\/auth\/([^\/]+)\/?$/`.
@@ -233,6 +273,7 @@ A regular expression that is run on the pathname of every request. authom will o
 ### authom.app
 
 This is a convenience Express app, which should be mounted at a path containing a `:service` parameter.
+
 
 Providers
 ---------
@@ -255,6 +296,26 @@ var signals = authom.createServer({
 })
 ```
 
+### Dropbox ([create an app](https://www.dropbox.com/developers/apps))
+
+Options:
+
+- `service`: "dropbox"
+- `id`: the application's `App key`
+- `secret`: the application's `App secret`
+- `info`: specify `true` if you want to get the user info (a little slower - one extra request)
+
+Example:
+
+```javascript
+var dropbox = authom.createServer({
+  service: "dropbox",
+  id: "zuuteb2w7i82mdg",
+  secret: "rj503lgqodxzvbp"
+  info: true
+})
+```
+
 ### Dwolla Live ([create an app](https://www.dwolla.com/applications))
 
 Options:
@@ -267,11 +328,11 @@ Options:
 Example:
 
 ```javascript
-var windowslive = authom.createServer({
+var dwolla = authom.createServer({
   service: "dwolla",
   id: "0vNUP/9/GSBXEv69nqKZVfhSZbw8XQdnDiatyXSTM7vW1WzAAU",
   secret: "KI2tdLiRZ813aclUxTgUVyDbxysoJQzPBjHTJ111nHMNdAVlcs",
-  scope:"AccountInfoFull"
+  scope: "AccountInfoFull"
 })
 ```
 
@@ -283,7 +344,7 @@ Options:
 - `id`: the application's `App ID`
 - `secret`: the application's `App secret`
 - `scope` (optional): the scopes requested by your application
-
+- `fields` (optional): the fields passed onto `/users/me`
 Example:
 
 ```javascript
@@ -291,7 +352,26 @@ var facebook = authom.createServer({
   service: "facebook",
   id: "256546891060909",
   secret: "e002572fb07423fa66fc38c25c9f49ad",
-  scope: []
+  scope: [],
+  fields: ["name", "picture"]
+})
+```
+
+### Fitbit ([request api key](https://dev.fitbit.com/apps/new))
+
+Options:
+
+- `service`: "fitbit"
+- `id`: the application's `Client ID`
+- `secret`: the application's `Client secret`
+
+Example:
+
+```javascript
+var fitbit = authom.createServer({
+  service: "fitbit",
+  id: "45987d27b0e14780bb1a6f1769e679dd",
+  secret: "3d403aaeb5b84bc49e98ef8b946a19d5"
 })
 ```
 
@@ -352,6 +432,24 @@ var github = authom.createServer({
 ```
 
 Make sure that the callback URL used by your application has the same hostname and port as that specified for your application. If they are different, you will get `redirect_uri_mismatch` errors.
+
+### Bitbucket (Go to https://bitbucket.org/account/user/YOURACCOUNT/api to create an app)
+
+Options:
+
+- `service`: "bitbucket"
+- `id`: the application's `Key`
+- `secret`: the application's `Secret`
+
+Example:
+
+```javascript
+var bitbucket = authom.createServer({
+  service: "bitbucket",
+  id: "Fs7WNJSqgUSL8zBAZD",
+  secret: "yNTv52kS7DWSztpLgbLWKD2AaNxGq2mB"
+})
+```
 
 ### Google ([create an app](https://code.google.com/apis/console/))
 
@@ -441,7 +539,7 @@ Options:
 Example:
 
 ```javascript
-authom.createServer({
+var twitter = authom.createServer({
   service: "twitter",
   id: "LwjCfHAugMghuYtHLS9Ugw",
   secret: "etam3XHqDSDPceyHti6tRQGoywiISY0vZWfzhQUxGL4"
@@ -470,7 +568,6 @@ var windowslive = authom.createServer({
 })
 ```
 
-
 ### LinkedIn ([create an app](https://www.linkedin.com/secure/developer?newapp=))
 
 Options:
@@ -479,11 +576,13 @@ Options:
 - `id`: the application's `Api key`
 - `secret`: the application's `Secret key`
 - `scopes`: Optional. An array with the scopes, fe: ["r_fullprofile", "r_emailaddress"]. Default: r_fullprofile
+- `fields`: Optional. Comma separated (no spaces) String with the linkedIn [fields](https://developer.linkedin.com/documents/profile-fields#fullprofile) to include in the query, fe: "first-name,last-name,picture-url,industry,summary,specialties,skills,projects,headline,site-standard-profile-request"
+- `format`: Optional. Format of the response, default "json".
 
 Example:
 
 ```javascript
-authom.createServer({
+var linkedin = authom.createServer({
   service: "linkedin",
   id: "AsjCfHAugMghuYtHLS9Xzy",
   secret: "arom3XHqDSDPceyHti6tRQGoywiISY0vZWfzhQUxXZ5"
