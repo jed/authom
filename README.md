@@ -1,4 +1,5 @@
 authom
+[![Build Status](https://travis-ci.org/deedubs/authom.png)](https://travis-ci.org/deedubs/authom)
 =======
 
 authom is an authentication library for node.js. It unifies authentication APIs for multiple services into a single EventEmitter, and works with both the built-in node.js HTTP module and as an Express/Connect app.
