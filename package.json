@@ -31,7 +31,8 @@
     "oauth": ">=0.9.6"
   },
   "scripts": {
-    "start": "sudo node ./example/server.js"
+    "start": "sudo node ./example/server.js",
+    "test": "make test"
   },
   "license": "MIT"
 }
