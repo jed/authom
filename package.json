@@ -13,7 +13,7 @@
   "contributors": [
     "Mark Lussier <mlussier@gmail.com> (https://github.com/intabulas)"
   ],
-  "main": "./lib/authom",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/jed/authom.git"
@@ -22,13 +22,17 @@
     "node": ">=0.6.15"
   },
   "devDependencies": {
-    "express": "~2.5.4"
+    "express": "~2.5.4",
+    "expect.js": "~0.2.0",
+    "mocha": "~1.9.0",
+    "jscoverage": "~0.3.6"
   },
   "optionalDependencies": {
     "oauth": ">=0.9.6"
   },
   "scripts": {
-    "start": "sudo node ./example/server.js"
+    "start": "sudo node ./example/server.js",
+    "test": "make test"
   },
   "license": "MIT"
 }
