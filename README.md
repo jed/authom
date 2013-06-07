@@ -440,6 +440,7 @@ Options:
 - `service`: "bitbucket"
 - `id`: the application's `Key`
 - `secret`: the application's `Secret`
+- `EMAILS`: specify `true` if you want to get the user's emails (a little slower - one extra request)
 
 Example:
 
@@ -447,7 +448,8 @@ Example:
 var bitbucket = authom.createServer({
   service: "bitbucket",
   id: "Fs7WNJSqgUSL8zBAZD",
-  secret: "yNTv52kS7DWSztpLgbLWKD2AaNxGq2mB"
+  secret: "yNTv52kS7DWSztpLgbLWKD2AaNxGq2mB",
+  emails: true
 })
 ```
 
