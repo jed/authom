@@ -94,7 +94,8 @@ authom.createServer({
 authom.createServer({
   service: "bitbucket",
   id: "Fs7WNJSqgUSL8zBAZD",
-  secret: "yNTv52kS7DWSztpLgbLWKD2AaNxGq2mB"
+  secret: "yNTv52kS7DWSztpLgbLWKD2AaNxGq2mB",
+  emails: true
 })
 
 app.get("/auth/:service", authom.app)
