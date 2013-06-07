@@ -440,7 +440,7 @@ Options:
 - `service`: "bitbucket"
 - `id`: the application's `Key`
 - `secret`: the application's `Secret`
-- `EMAILS`: specify `true` if you want to get the user's emails (a little slower - one extra request)
+- `emails`: specify `true` if you want to get the user's emails (a little slower - one extra request)
 
 Example:
 
