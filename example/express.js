@@ -98,6 +98,13 @@ authom.createServer({
   emails: true
 })
 
+authom.createServer({
+  service: "vkontakte",
+  id: "3793488",
+  secret: "jZnIeU4nnQfqM5mfjkK0",
+  fields: ['screen_name', 'sex', 'photo']
+})
+
 app.get("/auth/:service", authom.app)
 
 app.get("/", function(req, res) {
@@ -120,6 +127,7 @@ app.get("/", function(req, res) {
         "<div><a href='/auth/windowslive'>Who am I on Windows Live?</a></div>" +  
         "<div><a href='/auth/dropbox'>Who am I on Dropbox?</a></div>" +  
         "<div><a href='/auth/bitbucket'>Who am I on Bitbucket?</a></div>" +
+        "<div><a href='/auth/vkontakte'>Who am I on Vkontakte?</a></div>" +
       "</body>" +
     "</html>"
   )
