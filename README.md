@@ -101,6 +101,8 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/twitter.ico" style="vertical-align:middle"> Twitter (by [jed](https://github.com/jed))
 
+<img src="https://github.com/jed/authom/raw/master/lib/assets/vkontakte.ico" style="vertical-align:middle"> Vkontakte (by [molforp](https://github.com/molforp))
+
 <img src="https://github.com/jed/authom/raw/master/lib/assets/windowslive.ico" style="vertical-align:middle"> Windows Live (by [jed](https://github.com/jed))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/ninjablocks.ico" style="vertical-align:middle"> Ninja Blocks (by [thatguydan](https://github.com/thatguydan))
@@ -549,6 +551,28 @@ var twitter = authom.createServer({
 ```
 
 Notes: Since Twitter is still (!) using the old OAuth1.0a protocol, it requires [@ciaranj](https://github.com/ciaranj)'s [node-oauth](https://github.com/ciaranj/node-oauth) library to be installed.
+
+### Vkontakte ([create an app](http://vk.com/editapp?act=create))
+
+Options:
+
+- `service`: "vkontakte"
+- `id`: the application's `App ID`
+- `secret`: the application's `App secret`
+- `scope` (optional): the scopes requested by your application
+- `fields` (optional): the fields passed onto `/method/getProfiles`
+
+Example:
+
+```javascript
+var vkontakte = authom.createServer({
+  service: "vkontakte",
+  id: "3793488",
+  secret: "jZnIeU4nnQfqM5mfjkK0",
+  scope: [],
+  fields: ["screen_name", "sex", "photo"]
+})
+```
 
 ### Windows Live ([create an app](https://manage.dev.live.com/Applications/Index))
 
