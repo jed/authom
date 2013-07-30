@@ -22,6 +22,7 @@ var http = require("http")
           "<div><a href='/auth/windowslive'>Who am I on Windows Live?</a></div>" +  
           "<div><a href='/auth/dropbox'>Who am I on Dropbox?</a></div>" +  
           "<div><a href='/auth/bitbucket'>Who am I on Bitbucket?</a></div>" +
+          "<div><a href='/auth/vkontakte'>Who am I on Vkontakte?</a></div>" +
         "</body>" +
       "</html>"
     )
@@ -134,6 +135,13 @@ authom.createServer({
   id: "Fs7WNJSqgUSL8zBAZD",
   secret: "yNTv52kS7DWSztpLgbLWKD2AaNxGq2mB",
   emails: false
+})
+
+authom.createServer({
+  service: "vkontakte",
+  id: "3793488",
+  secret: "jZnIeU4nnQfqM5mfjkK0",
+  fields: ['screen_name', 'sex', 'photo']
 })
 
 authom.on("auth", function(req, res, data) {
