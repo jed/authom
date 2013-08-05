@@ -560,7 +560,7 @@ Options:
 - `id`: the application's `App ID`
 - `secret`: the application's `App secret`
 - `scope` (optional): the scopes requested by your application
-- `fields` (optional): the fields passed onto `/method/getProfiles`
+- `fields` (optional): the fields passed onto `/method/users.get`
 
 Example:
 
