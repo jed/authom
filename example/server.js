@@ -39,7 +39,8 @@ server.on("request", function(req, res) {
 authom.createServer({
   service: "github",
   id: "7e38d12b740a339b2d31",
-  secret: "116e41bd4cd160b7fae2fe8cc79c136a884928c3"
+  secret: "116e41bd4cd160b7fae2fe8cc79c136a884928c3",
+  state: "unguessable-random-string"
 })
 
 authom.createServer({
