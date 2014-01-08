@@ -85,7 +85,7 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/foursquare.ico" style="vertical-align:middle"> Foursquare (by [nodebiscut](https://github.com/nodebiscut))
 
-<img src="https://github.com/jed/authom/raw/master/lib/assets/github.ico" style="vertical-align:middle"> Github (by [jed](https://github.com/jed))
+<img src="https://github.com/jed/authom/raw/master/lib/assets/github.ico" style="vertical-align:middle"> GitHub (by [jed](https://github.com/jed))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/google.ico" style="vertical-align:middle"> Google (by [jed](https://github.com/jed))
 
@@ -151,14 +151,14 @@ var github = authom.createServer({
 })
 ```
 
-An optional `name` member can also be passed to override that used for authom path matching. So if you had two Github apps, you could set them as `name: github1` and `name: github2`, so that they could be accessed as `/auth/github1` and `/auth/github2`.
+An optional `name` member can also be passed to override that used for authom path matching. So if you had two GitHub apps, you could set them as `name: github1` and `name: github2`, so that they could be accessed as `/auth/github1` and `/auth/github2`.
 
 You can listen for `auth` and `error` events by:
 
 - listening to a specific service for service-specific events, or
 - listening to `authom` for all service events
 
-For example, use this to listen for events from Github, based on the code above:
+For example, use this to listen for events from GitHub, based on the code above:
 
 ```javascript
 github.on("auth", function(req, res, gitHubSpecificData){})
@@ -413,14 +413,18 @@ var foursquare = authom.createServer({
 })
 ```
 
-### Github ([create an app](https://github.com/account/applications/new))
+### GitHub ([create an app](https://github.com/settings/applications/new))
+
+[Full Docs](http://developer.github.com/v3/oauth/)
 
 Options:
 
 - `service`: "github"
 - `id`: the application's `Client ID`
 - `secret`: the application's `Secret`
+- `redirect_uri` (optional): Alternative redirect url.
 - `scope` (optional): the scopes requested by your application, as explained [here](http://developer.github.com/v3/oauth/#scopes).
+- `state` (optional): Unguessable random string.
 
 Example:
 
@@ -429,7 +433,7 @@ var github = authom.createServer({
   service: "github",
   id: "7e38d12b740a339b2d31",
   secret: "116e41bd4cd160b7fae2fe8cc79c136a884928c3",
-  scope: ["gist"]
+  scope: "gist"
 })
 ```
 
