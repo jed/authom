@@ -93,8 +93,8 @@ authom.createServer({
 
 authom.createServer({
   service: "bitbucket",
-  id: "Fs7WNJSqgUSL8zBAZD",
-  secret: "yNTv52kS7DWSztpLgbLWKD2AaNxGq2mB",
+  id: "2sD26teP8SVfStUwMd",
+  secret: "vTeXLmyXubwFkrBAP96KRjgT8tubVqpD",
   emails: true
 })
 
