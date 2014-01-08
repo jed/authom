@@ -132,8 +132,8 @@ authom.createServer({
 
 authom.createServer({
   service: "bitbucket",
-  id: "Fs7WNJSqgUSL8zBAZD",
-  secret: "yNTv52kS7DWSztpLgbLWKD2AaNxGq2mB",
+  id: "2sD26teP8SVfStUwMd",
+  secret: "vTeXLmyXubwFkrBAP96KRjgT8tubVqpD",
   emails: false
 })
 
@@ -155,7 +155,7 @@ authom.on("auth", function(req, res, data) {
   )
 
   res.writeHead(200, {
-    "Content-Type": "text/html",
+    "Content-Type": "text/html; charset=utf-8",
     "Content-Length": answer.length
   })
 
@@ -166,7 +166,7 @@ authom.on("error", function(req, res, data){
   data = Buffer("An error occurred: " + JSON.stringify(data))
 
   res.writeHead(500, {
-    "Content-Type": "text/plain",
+    "Content-Type": "text/plain; charset=utf-8",
     "Content-Length": data.length
   })
 
