@@ -43,7 +43,8 @@ server.listen(8000)
 For Express/Connect:
 
 ```javascript
-var app = require("express").createServer()
+var express = require("express")
+  , app = express()
   , authom = require("authom")
 
 // create servers for the services you'll be using

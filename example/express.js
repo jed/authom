@@ -1,6 +1,6 @@
 var express = require("express")
   , authom = require("../lib/authom")
-  , app = express.createServer()
+  , app = express()
   , port = process.env.PORT || 80
 
 authom.createServer({
