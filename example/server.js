@@ -39,9 +39,9 @@ server.on("request", function(req, res) {
 
 authom.createServer({
   service: "reddit",
-  id: "BsoGDueTiXSjRA",
-  secret: "xKlLN6Q8rKZ8hkCHxU9XtB55wUQ",
-  state: "unguessablerandomstring"
+  id: "hG5c04ZOk0UngQ",
+  secret: "mdJoGP4ayA9M7NdBiKxZUyewz7M",
+  state: "unguessable-random-string"
 })
 
 authom.createServer({
