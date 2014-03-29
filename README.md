@@ -98,6 +98,8 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/meetup.ico" style="vertical-align:middle"> Meetup (by [softprops](https://github.com/softprops))
 
+<img src="https://github.com/jed/authom/raw/master/lib/assets/reddit.png" style="vertical-align:middle"> Reddit (by [avidw](https://github.com/avidw))
+
 <img src="https://github.com/jed/authom/raw/master/lib/assets/soundcloud.ico" style="vertical-align:middle"> SoundCloud (by [jed](https://github.com/jed))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/twitter.ico" style="vertical-align:middle"> Twitter (by [jed](https://github.com/jed))

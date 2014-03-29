@@ -17,6 +17,7 @@ var http = require("http")
           "<div><a href='/auth/instagram'>Who am I on Instagram?</a></div>" +
           "<div><a href='/auth/linkedin'>Who am I on LinkedIn?</a></div>" +
           "<div><a href='/auth/meetup'>Who am I on Meetup?</a></div>" +
+          "<div><a href='/auth/reddit'>Who am I on Reddit?</a></div>" +
           "<div><a href='/auth/soundcloud'>Who am I on SoundCloud?</a></div>" +
           "<div><a href='/auth/twitter'>Who am I on Twitter?</a></div>" +
           "<div><a href='/auth/windowslive'>Who am I on Windows Live?</a></div>" +  
@@ -34,6 +35,13 @@ server.on("request", function(req, res) {
   })
 
   res.end(questions)
+})
+
+authom.createServer({
+  service: "reddit",
+  id: "hG5c04ZOk0UngQ",
+  secret: "mdJoGP4ayA9M7NdBiKxZUyewz7M",
+  state: "unguessable-random-string"
 })
 
 authom.createServer({
