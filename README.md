@@ -521,6 +521,28 @@ var instagram = authom.createServer({
 })
 ```
 
+### Reddit ([create an app](https://ssl.reddit.com/prefs/apps/))
+
+Options:
+
+- `service`: "reddit"
+- `id`: the application's `CLIENT ID`
+- `secret`: the application's `CLIENT SECRET`
+- `state`: Unguessable random string.
+- `scope` (optional): the scopes requested by your application
+
+Example:
+
+```javascript
+var reddit = authom.createServer({
+  service: "reddit",
+  id: "hG5c04ZOk0UngQ",
+  secret: "mdJoGP4ayA9M7NdBiKxZUyewz7M",
+  state: "unguessable-random-string",
+  scope: "identity"
+})
+```
+
 ### SoundCloud ([create an app](http://soundcloud.com/you/apps/new))
 
 Options:
