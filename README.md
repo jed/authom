@@ -102,6 +102,8 @@ Supported services
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/soundcloud.ico" style="vertical-align:middle"> SoundCloud (by [jed](https://github.com/jed))
 
+<img src="https://github.com/jed/authom/raw/master/lib/assets/trello.ico" style="vertical-align:middle"> Trello (by [falexandrou](https://github.com/falexandrou))
+
 <img src="https://github.com/jed/authom/raw/master/lib/assets/twitter.ico" style="vertical-align:middle"> Twitter (by [jed](https://github.com/jed))
 
 <img src="https://github.com/jed/authom/raw/master/lib/assets/vkontakte.ico" style="vertical-align:middle"> Vkontakte (by [molforp](https://github.com/molforp))
@@ -558,6 +560,30 @@ var soundcloud = authom.createServer({
   service: "soundcloud",
   id: "9e5e7b0a891b4a2b13aeae9e5b0c89bb",
   secret: "2f4df63c8ff10f466685c305e87eba6f"
+})
+```
+
+### Trello ([create an app](https://trello.com/docs/gettingstarted/index.html#getting-an-application-key))
+
+Options:
+
+- `service`: "trello"
+- `id`: the application's `Consumer key`
+- `secret`: the application's `Consumer secret`
+- `app_name`: the application's `name`
+- `expiration`: optional - when the token expires (examples: `never`, `30days`, `1day`). Default is `30days`
+- `scope`: optional - by default the scope is set to `read`. Example: `read,write`
+
+Example:
+
+```javascript
+var trello = authom.createServer({
+  service: "trello",
+  id: "LwjCfHAugMghuYtHLS9Ugw",
+  secret: "etam3XHqDSDPceyHti6tRQGoywiISY0vZWfzhQUxGL4",
+  app_name: "Coolest app in the world",
+  expiration: "never",
+  scope: "read,write",
 })
 ```
 
