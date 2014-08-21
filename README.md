@@ -587,7 +587,7 @@ var trello = authom.createServer({
 })
 ```
 
-### Twitter ([create an app](dev.twitter.com/apps/))
+### Twitter ([create an app](https://dev.twitter.com/apps/new))
 
 Options:
 
