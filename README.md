@@ -70,47 +70,47 @@ app.listen(8000)
 Supported services
 ------------------
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/37signals.ico" style="vertical-align:middle"> 37signals (by [nodebiscut](https://github.com/nodebiscut))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/37signals.ico" style="vertical-align:middle"> 37signals (by [nodebiscut](https://github.com/nodebiscut))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/bitbucket.png" style="vertical-align:middle" width="16" height="16"> Bitbucket (by [aslakhellesoy](https://github.com/aslakhellesoy))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/bitbucket.png" style="vertical-align:middle" width="16" height="16"> Bitbucket (by [aslakhellesoy](https://github.com/aslakhellesoy))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/dropbox.ico" style="vertical-align:middle"> Dropbox (by [cartuchogl](https://github.com/cartuchogl))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/dropbox.ico" style="vertical-align:middle"> Dropbox (by [cartuchogl](https://github.com/cartuchogl))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/dwolla.ico" style="vertical-align:middle"> Dwolla (by [nodebiscut](https://github.com/nodebiscut))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/dwolla.ico" style="vertical-align:middle"> Dwolla (by [nodebiscut](https://github.com/nodebiscut))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/facebook.ico" style="vertical-align:middle"> Facebook (by [jed](https://github.com/jed))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/facebook.ico" style="vertical-align:middle"> Facebook (by [jed](https://github.com/jed))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/fitbit.ico" style="vertical-align:middle"> Fitbit (by [pspeter3](https://github.com/pspeter3))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/fitbit.ico" style="vertical-align:middle"> Fitbit (by [pspeter3](https://github.com/pspeter3))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/foodspotting.ico" style="vertical-align:middle"> Foodspotting (by [kimtaro](https://github.com/kimtaro))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/foodspotting.ico" style="vertical-align:middle"> Foodspotting (by [kimtaro](https://github.com/kimtaro))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/foursquare.ico" style="vertical-align:middle"> Foursquare (by [nodebiscut](https://github.com/nodebiscut))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/foursquare.ico" style="vertical-align:middle"> Foursquare (by [nodebiscut](https://github.com/nodebiscut))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/github.ico" style="vertical-align:middle"> GitHub (by [jed](https://github.com/jed))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/github.ico" style="vertical-align:middle"> GitHub (by [jed](https://github.com/jed))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/google.ico" style="vertical-align:middle"> Google (by [jed](https://github.com/jed))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/google.ico" style="vertical-align:middle"> Google (by [jed](https://github.com/jed))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/gowalla.ico" style="vertical-align:middle"> Gowalla (by [jed](https://github.com/jed))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/gowalla.ico" style="vertical-align:middle"> Gowalla (by [jed](https://github.com/jed))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/instagram.ico" style="vertical-align:middle"> Instagram (by [jed](https://github.com/jed))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/instagram.ico" style="vertical-align:middle"> Instagram (by [jed](https://github.com/jed))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/linkedin.ico" style="vertical-align:middle"> LinkedIn (by [shinecita](https://github.com/shinecita))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/linkedin.ico" style="vertical-align:middle"> LinkedIn (by [shinecita](https://github.com/shinecita))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/meetup.ico" style="vertical-align:middle"> Meetup (by [softprops](https://github.com/softprops))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/meetup.ico" style="vertical-align:middle"> Meetup (by [softprops](https://github.com/softprops))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/reddit.png" style="vertical-align:middle"> Reddit (by [avidw](https://github.com/avidw))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/reddit.png" style="vertical-align:middle"> Reddit (by [avidw](https://github.com/avidw))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/soundcloud.ico" style="vertical-align:middle"> SoundCloud (by [jed](https://github.com/jed))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/soundcloud.ico" style="vertical-align:middle"> SoundCloud (by [jed](https://github.com/jed))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/trello.ico" style="vertical-align:middle"> Trello (by [falexandrou](https://github.com/falexandrou))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/trello.ico" style="vertical-align:middle"> Trello (by [falexandrou](https://github.com/falexandrou))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/twitter.ico" style="vertical-align:middle"> Twitter (by [jed](https://github.com/jed))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/twitter.ico" style="vertical-align:middle"> Twitter (by [jed](https://github.com/jed))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/vkontakte.ico" style="vertical-align:middle"> Vkontakte (by [molforp](https://github.com/molforp))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/vkontakte.ico" style="vertical-align:middle"> Vkontakte (by [molforp](https://github.com/molforp))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/windowslive.ico" style="vertical-align:middle"> Windows Live (by [jed](https://github.com/jed))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/windowslive.ico" style="vertical-align:middle"> Windows Live (by [jed](https://github.com/jed))
 
-<img src="https://raw.githubusercontent.com/jed/authom/raw/master/lib/assets/ninjablocks.ico" style="vertical-align:middle"> Ninja Blocks (by [thatguydan](https://github.com/thatguydan))
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/ninjablocks.ico" style="vertical-align:middle"> Ninja Blocks (by [thatguydan](https://github.com/thatguydan))
 
 Installation and Setup
 ----------------------
