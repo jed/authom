@@ -430,6 +430,7 @@ Options:
 - `redirect_uri` (optional): Alternative redirect url.
 - `scope` (optional): the scopes requested by your application, as explained [here](http://developer.github.com/v3/oauth/#scopes).
 - `state` (optional): Unguessable random string.
+- `url` (optional): URL to github. Specify this to use with GitHub Enterprise.
 
 Example:
 
