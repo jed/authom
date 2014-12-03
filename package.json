@@ -22,7 +22,7 @@
     "node": ">=0.6.15"
   },
   "devDependencies": {
-    "express": "~2.5.4"
+    "express": "^4.0.0"
   },
   "optionalDependencies": {
     "oauth": ">=0.9.6"

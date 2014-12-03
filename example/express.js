@@ -145,7 +145,7 @@ authom.on("auth", function(req, res, data) {
 })
 
 authom.on("error", function(req, res, data){
-  res.error("An error occurred: " + JSON.stringify(data))
+  res.status(500).send("An error occurred: " + JSON.stringify(data))
 })
 
 app.listen(port, function() {
