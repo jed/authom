@@ -102,6 +102,8 @@ Supported services
 
 <img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/soundcloud.ico" style="vertical-align:middle"> SoundCloud (by [jed](https://github.com/jed))
 
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/stripe.ico" style="vertical-align:middle"> Stripe Connect (by [recipher](https://github.com/recipher))
+
 <img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/trello.ico" style="vertical-align:middle"> Trello (by [falexandrou](https://github.com/falexandrou))
 
 <img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/twitter.ico" style="vertical-align:middle"> Twitter (by [jed](https://github.com/jed))
