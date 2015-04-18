@@ -114,6 +114,8 @@ Supported services
 
 <img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/ninjablocks.ico" style="vertical-align:middle"> Ninja Blocks (by [thatguydan](https://github.com/thatguydan))
 
+<img src="https://raw.githubusercontent.com/jed/authom/master/lib/assets/vso.png" style="vertical-align:middle"> Visual Studio Online (by [asureddi](https://github.com/asureddi))
+
 Installation and Setup
 ----------------------
 
