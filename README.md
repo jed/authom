@@ -483,7 +483,7 @@ var google = authom.createServer({
   service: "google",
   id: "515913292583.apps.googleusercontent.com",
   secret: "UAjUGd_MD9Bkho-kazmJ5Icm",
-  scope: ""
+  scope: ["https://www.googleapis.com/auth/userinfo.email"] 
 })
 ```
 
